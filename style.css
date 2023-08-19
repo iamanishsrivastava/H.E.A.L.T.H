@@ -1,0 +1,82 @@
+/* Setting default style */
+* {
+    /* no space should be left around the webpage under unawareness */
+    margin: 0;
+    padding: 0;
+    /* default font family */
+    font-family: ;
+    /* Choosing rem - the page should be responsive */
+    font-size: 1rem;
+}
+
+/* Navigation bar */
+.navbar{
+    background-color: teal;
+    border-radius: 25px;
+}
+
+/* Defining the flow of unordered list elements - Navigation bar */
+.navbar ul{
+    overflow: auto;
+}
+
+/* List Items Styling - NavBar */
+.navbar li{
+   
+    float: right;
+    text-transform: uppercase;
+    list-style: none;
+    margin: 16px 11px; 
+    padding-top: 3px;
+}
+
+/* Removing default styling of the list items - NavBar */
+.navbar li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: rgb(224, 203, 11);
+}
+
+/* List Items Upon Hover - NavBar */
+.navbar li a:hover{
+    color: white;
+    transition: 0.5s;
+    /* translate3d is used to make the elements pop-out - not working */
+    transform: translate3d(155px, 50px, 55px);
+}
+
+/* Home Section */
+#home {
+    width: 100%;
+    height: 555px;
+    background-color: lightblue;
+}
+
+/* tagline - Home Section */
+.tagline {
+    margin: 50px 16px 0 16px;
+}
+
+/* About Section */
+#about {
+    width: 100%;
+    height: 555px;
+}
+
+/* Services Section */
+#services {
+    width: 100%;
+    height: 555px;
+}
+
+/* Testimonials Section */
+#test {
+    width: 100%;
+    height: 555px;
+}
+
+/* Contact Us Section */
+#contact {
+    width: 100%;
+    height: 555px;
+}
