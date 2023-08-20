@@ -3,62 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Giving icon to our website -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Title of this website -->
-    <title>MediCare</title>
-    
-    <!-- linking the external style sheet -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- linking CDN for accessing icons from fastest server -->
+    <title>MediCare</title>
 </head>
-<body>
-
-    <!-- Navigation Bar -->
+<body class="brown-teal">
+    
+    
+    <!-- NavBar -->
     <header>
         <nav class="navbar">
-            <!-- List of sections of our website for smooth access -->
             <ul>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#test">Testimonials</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#test">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <!-- Toggle Switch for Theme -->
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="theme-toggle-checkbox" class="hidden" checked>
+                        <label for="theme-toggle-checkbox" class="theme-toggle-label">
+                            <img src="img/sun.png" alt="Sun" class="theme-icon light">
+                            <img src="img/half-moon.png" alt="Moon" class="theme-icon dark">
+                        </label>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
 
     <!-- Home Section -->
     <section id="home">
-        Heya
-        <p class="tagline">
-            May it be medication or symptoms, <a href="#home">MediCare.tech</a> will provides you with all the information you seek.</p>
+        <div class="container">
+            <div class="search-med-container">
+                <div class="search-box">
+                    <h1 class="main-title">Info about<br>medicine/symptoms?</h1>
+                    <div class="search-container">
+                        <!-- Search Input - Home Section -->
+                        <input type="text" class="search-input" id="searchInput" placeholder="Type here to search">
+                        <button class="search-button" id="searchButton">SEARCH</button>
+                    </div>
+                </div>
+            </div>
+            <div class="med-info">
+                <h2>Medicine Info</h2>
+                <img src="img/medicine-info-image.jpg" id="med-info-image" alt="Medicine Info Image">
+                <div class="medical-related-info">
+                    <div class="medical-info-column">
+                        <h3>Uses</h3>
+                        <p>Information about the medical uses of the medicine.</p>
+                    </div>
+                    <div class="medical-info-column">
+                        <h3>Side Effects</h3>
+                        <p>Information about the possible side effects of the medicine.</p>
+                    </div>
+                    <div class="medical-info-column">
+                        <h3>Related Medical Advice</h3>
+                        <p>Advice and recommendations related to the medicine from medical experts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     <hr>
 
     <!-- About Section -->
     <section id="about">
-        About Begins!
+        <div class="container">
+            <h2>About Section</h2>
+            <p>Information about the company and its mission.</p>
+        </div>
     </section>
     <hr>
-
+    
     <!-- Services Section -->
     <section id="services">
-        Services Begins
+        <div class="container">
+            <h2>Services Section</h2>
+            <p>Details about the services offered by the company.</p>
+        </div>
     </section>
     <hr>
 
     <!-- Testimonials Section -->
     <section id="test">
-        Testimonials Section Begins! 
+        <div class="container">
+            <h2>Testimonials Section</h2>
+            <p>Feedback and testimonials from satisfied customers.</p>
+        </div>
     </section>
     <hr>
 
     <!-- Contact Section -->
     <section id="contact">
-        Contact Section Begins!
+        <div class="container">
+            <h2>Contact Section</h2>
+            <p>Contact information and ways to get in touch.</p>
+        </div>
     </section>
+
+    <!-- linking JS -->
+    <script src="script.js"></script>
+
 </body>
 </html>
