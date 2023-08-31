@@ -14,31 +14,140 @@ body.brown-teal {
 
 
 body.navy-blue-light {
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: #E8F6EF;
+    color: black;
+}
+
+/* Circular Menu */
+.circular-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #4c4c6d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.menu-icon {
+    color: #ffe194;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s, color 0.3s;
+}
+
+.circular-menu-list {
+    position: fixed;
+    top: 45px;
+    right: 30px;
+    height: 175px;
+    width: 40px;
+    transform: translateX(50%);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    opacity: 0; /* Initially hidden */
+    pointer-events: none; /* Disable pointer events when hidden */
+    transition: opacity 0.3s, transform 0.3s; /* Add transitions for opacity and transform */
+}
+
+.circular-menu-list li {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.circular-menu-list a {
+    text-decoration: none;
+    color: #ffe194;
+    font-size: 16px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.circular-menu-list a:hover {
+    color: #1b9c85;
+}
+
+/* Show menu items when the show class is added */
+.circular-menu-list.show {
+    opacity: 10;
+    pointer-events: auto; /* Re-enable pointer events when shown */
+    transform: translateX(50%) translateY(10px); /* Adjust translateY to your preference */
+    background-color: #4c4c6d;
+    color: #ffe194;
+    border-radius: 20px;
 }
 
 /* Navigation bar */
 .navbar {
     background-color: #4c4c6d;
-    padding: 15px 0;
+    padding: 0;
     position: sticky;
+    top: 0; /* Stick the navbar to the top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    z-index: 100; /* Make sure the navbar stays above other content */
+    transition: background-color 0.3s; /* Add transition for smooth color change */
 }
 
-/* Navigation bar list items */
-.navbar ul {
+/* Styling for the navigation list items */
+.navbar-list {
     list-style: none;
-    text-align: center;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar li {
-    display: inline-block;
+.navbar-list li {
     margin: 0 15px;
 }
 
-.navbar li a {
+.navbar-list li a {
     text-decoration: none;
     color: #ffe194;
+    transition: color 0.3s; /* for smooth color change */
+}
+
+.navbar-list li a:hover {
+    color: #e8f6ef;
+}
+
+.navbar.scrolled {
+    background-color: rgba(76, 76, 109, 0.9);
+}
+
+/* Theme Toggle Label */
+.navbar-list .theme-toggle-label {
+    width: 45px;
+    height: 24px;
+    background-color: #ffe194;
+    border-radius: 25px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    overflow: hidden;  /* Hide overflowing images */
+}
+
+/* Theme Icon (Sun and Moon) */
+.navbar-list .theme-icon {
+    width: 19px;
+    height: 24px;
+    transition: transform 0.3s;
+    position: absolute;
 }
 
 /* Home Section */
@@ -60,15 +169,6 @@ body.navy-blue-light {
     gap: 20px;
     flex-wrap: wrap;
 }
-
-/* .search-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-left: 13px;
-} */
 
 .main-title {
     font-size: 2.5rem;
@@ -157,29 +257,6 @@ body.navy-blue-light {
     text-align: center;
 }
 
-/* Theme Toggle Label */
-.theme-toggle-label {
-    width: 45px;
-    height: 24px;
-    background-color: #ffe194;
-    border-radius: 25px;
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    overflow: hidden; /* Hide overflowing images */
-}
-
-/* Theme Icon (Sun and Moon) */
-.theme-icon {
-    width: 19px;
-    height: 24px;
-    transition: transform 0.3s;
-    position: absolute;
-}
-
 /* Light Mode Icon */
 .light {
     left: 0px;
@@ -213,12 +290,131 @@ body.navy-blue-light {
 #about, #services, #test, #contact {
     width: 100%;
     min-height: 100vh;
-    padding: 100px 0;
-    /* background-color: #f0f4f8; */
-    color: #333;
+    /* padding: 100px 0; */
+    color: #e8f6ef;
     text-align: center;
 }
 
+/* Light mode styles */
+.light-mode .contact-section {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Dark mode styles */
+.dark-mode .contact-section {
+    background-color: #4c4c6d;
+    color: #e8f6ef;
+}
+
+#contact {
+    padding: 100px;
+}
+
+.contact-section {
+    text-align: center;
+    display: block;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* Initial background color */
+    color: #333333; /* Initial text color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form input:hover,
+.contact-form input:focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+    background-color: #4c4c6d; /* Hover and focus background color */
+    color: #ffe194; /* Hover and focus text color */
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #4c4c6d;
+    color: #e8f6ef;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #333333;
+    color: #ffe194;
+}
+
+.contact-info {
+    margin-top: 40px;
+}
+
+.contact-info-box {
+    margin-top: 35px;
+    margin-bottom: auto;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-link {
+    display: inline-block;
+    margin-right: 10px;
+    color: #e8f6ef;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #333333;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #4c4c6d;
+    color: #ffe194;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #ffe194;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.footer-links a:hover {
+    color: #e8f6ef;
+}
+
+/* others */
 .container h2 {
     font-size: 2rem;
     margin-bottom: 20px;
