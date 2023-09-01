@@ -152,3 +152,27 @@ searchButton.addEventListener('click', function() {
     // Perform the search functionality here
     // For example, you can redirect to a search results page or display search results below
 });
+
+// JavaScript to handle the hover effect
+const doctorCards = document.querySelectorAll('.doctors');
+
+doctorCards.forEach((card) => {
+    card.addEventListener('mouseenter', () => {
+        // Disable images and rotate names for other cards
+        doctorCards.forEach((otherCard) => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('active');
+            }
+        });
+        card.classList.add('active');
+    });
+
+    card.addEventListener('mouseleave', () => {
+        // Reset images and names when not hovering
+        doctorCards.forEach((otherCard) => {
+            if (otherCard !== card) {
+                otherCard.classList.add('active');
+            }
+        });
+    });
+});
