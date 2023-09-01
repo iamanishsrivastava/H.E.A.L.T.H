@@ -549,13 +549,14 @@ p.speciality {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 490px; /* Keep the height fixed at 490px */
+    height: 490px;
 }
 
 .doctors:not(.active) h3 {
     /* Rotate the names */
     transform: rotate(90deg);
-    margin: 0; /* Remove any margin to center the rotated text */
+    /* Remove any margin to center the rotated text */
+    margin: 0; 
 }
 
 .doctors:not(.active) p {
