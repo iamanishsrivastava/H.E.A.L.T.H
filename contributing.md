@@ -10,7 +10,7 @@ Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to t
 
 ### Discussing Before Taking Action
 
-Before forking this repository, making changes, or using any project resources or code snippets, we highly recommend opening a discussion on our [Discord server](link to your Discord server) or contacting [Anish Srivastava](https://github.com/iamanishsrivastava) or the project's maintainers. This helps ensure that your proposed actions align with the project's goals and standards.
+Before forking this repository, making changes, or using any project resources or code snippets, we highly recommend opening a discussion on our [Discord server](https://discord.gg/7TF9zaU97V) or contacting [Anish Srivastava](https://github.com/iamanishsrivastava) or the project's maintainers. This helps ensure that your proposed actions align with the project's goals and standards.
 
 ### Reporting Bugs
 
