@@ -522,6 +522,6 @@ test-container{
 }
 
 /* Temporary disabled #about, #services section - until further improvisation with notice */
-#about, #section {
+#about, #services {
     display: none;
 }
