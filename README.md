@@ -41,4 +41,4 @@ We welcome contributions from the community! If you'd like to contribute to the 
 
 ## License
 
-This project is licensed under the [MediCare Custom Contribution License](LICENSE.md).
+This project is licensed under the [MediCare Custom Contribution License](LICENSE).
