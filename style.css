@@ -572,7 +572,8 @@ p.speciality {
     left: 50%;
     transform: translateX(-50%);
     background: #76d4d4;
-    overflow: hidden; /* Hide overflowing content */
+    /* Hide overflowing content */
+    overflow: hidden; 
 }
 
 .team.doctors.team_img img {
