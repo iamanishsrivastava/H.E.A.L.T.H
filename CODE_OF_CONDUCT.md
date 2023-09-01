@@ -25,7 +25,7 @@ The following behaviors are considered unacceptable within the MediCare communit
 
 ## Reporting and Enforcement
 
-If you experience or witness behavior that violates this Code of Conduct, please report it to the project maintainers at [contact-email@example.com]. All reports will be kept confidential. The maintainers will review and investigate any reported incidents and take appropriate action.
+If you experience or witness behavior that violates this Code of Conduct, please report it to the project maintainers at [proj.medicare@gmail.com]. All reports will be kept confidential. The maintainers will review and investigate any reported incidents and take appropriate action.
 
 ## Enforcement Consequences
 
