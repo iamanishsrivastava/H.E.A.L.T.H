@@ -14,7 +14,7 @@ This Custom Contribution License ("License") governs your rights and responsibil
 
 1. Contributors hereby grant to [Anish Srivastava](https://github.com/iamanishsrivastava), the exclusive, irrevocable, worldwide, royalty-free right, with the right to sublicense, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the Contributions, either on a source code or binary basis, and/or to include the Contributions in any form or purpose, whether it is for commercial or non-commercial purposes.
 
-2. Contributors retain the copyright to their Contributions and may use them for their own purposes outside the Project.
+2. Contributors retain the copyright to their Contributions and may use them for their own purposes outside the Project only with the explicit approval of [Anish Srivastava](https://github.com/iamanishsrivastava).
 
 ## Approval Process
 
