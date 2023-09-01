@@ -520,3 +520,8 @@ test-container{
     align-items: center;
     height: auto;
 }
+
+/* Temporary disabled #about, #services section - until further improvisation with notice */
+#about, #section {
+    display: none;
+}
