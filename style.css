@@ -18,6 +18,7 @@ body.navy-blue-light {
     color: black;
 }
 
+/* NavControl - NavBar - Header */
 /* Circular Menu */
 .circular-menu {
     position: fixed;
@@ -35,6 +36,7 @@ body.navy-blue-light {
     transition: background-color 0.3s;
 }
 
+/* Plus/Cross Symbol - NavControl */
 .menu-icon {
     color: #ffe194;
     font-size: 24px;
@@ -120,7 +122,7 @@ body.navy-blue-light {
 }
 
 .navbar-list li a:hover {
-    color: #e8f6ef;
+    color: #1b9c85;
 }
 
 .navbar.scrolled {
@@ -375,6 +377,10 @@ body.navy-blue-light {
     margin-bottom: 10px;
 }
 
+.contact-info-box p:hover{
+    color: #4c4c6d;
+}
+
 .social-links {
     margin-top: 20px;
 }
@@ -388,7 +394,7 @@ body.navy-blue-light {
 }
 
 .social-link:hover {
-    color: #333333;
+    color: #4c4c6d;
 }
 
 /* Footer styles */
@@ -411,7 +417,7 @@ body.navy-blue-light {
 }
 
 .footer-links a:hover {
-    color: #e8f6ef;
+    color: #1b9c85;
 }
 
 /* others */
