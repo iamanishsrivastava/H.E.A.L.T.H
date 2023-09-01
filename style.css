@@ -580,7 +580,7 @@ p.speciality {
     width: 100%;
 }
 
-/* Temporary disabled #about, #services section - until further improvisation and` notice */
+/* Temporary disabled #about, #services section - until further improvisation and notice */
 #about, #services {
     display: none;
 }
