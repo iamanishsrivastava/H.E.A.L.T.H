@@ -556,7 +556,7 @@ p.speciality {
     /* Rotate the names */
     transform: rotate(90deg);
     /* Remove any margin to center the rotated text */
-    margin: 0; 
+    margin: 0;
 }
 
 .doctors:not(.active) p {
