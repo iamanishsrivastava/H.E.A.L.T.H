@@ -521,7 +521,7 @@ test-container{
     height: auto;
 }
 
-/* Temporary disabled #about, #services section - until further improvisation with notice */
+/* Temporary disabled #about, #services section - until further improvisation and notice */
 #about, #services {
     display: none;
 }
