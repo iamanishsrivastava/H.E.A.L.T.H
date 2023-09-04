@@ -25,3 +25,44 @@ initializeApp(firebaseConfig)
 
 // init services
 const db = getFirestore()
+
+
+// Assume you have a search input field with id "searchInput" and a button with id "searchButton" in your HTML
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const resultsDiv = document.getElementById('resultsDiv'); // This is where you'll display the search results
+
+// Add an event listener for the search button click
+searchButton.addEventListener('click', () => {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+
+    // Create a reference to the "Medicine" collection
+    const medicineRef = collection(db, 'Medicine');
+
+    // Construct a query to search for the medicine by name
+    const query = query(medicineRef, where('Name', '==', searchTerm));
+
+    // Execute the query
+    getDocs(query)
+        .then((querySnapshot) => {
+            // Clear previous search results
+            resultsDiv.innerHTML = '';
+
+            // Check if any documents match the search term
+            if (querySnapshot.size === 0) {
+                resultsDiv.innerHTML = 'No results found.';
+            } else {
+                // Display the search results
+                querySnapshot.forEach((doc) => {
+                    const medicineData = doc.data();
+                    const resultItem = document.createElement('div');
+                    resultItem.textContent = `Name: ${medicineData.Name}, Symptoms: ${medicineData.Symptoms}, Usage: ${medicineData.Usage}`;
+                    resultsDiv.appendChild(resultItem);
+                });
+            }
+        })
+        .catch((error) => {
+            console.error('Error searching for medicine:', error);
+        });
+});
