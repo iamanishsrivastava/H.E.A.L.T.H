@@ -278,6 +278,7 @@
         height: 250px;
         border-radius: 10px;
         text-align: center;
+        overflow: hidden;
     }
 
     /* Light Mode Icon */
@@ -584,4 +585,9 @@ p.speciality {
 /* Temporary disabled #about, #services section - until further improvisation and notice */
 #about, #services {
     display: none;
+}
+
+.highlight-text {
+    font-size: 18px;
+    overflow: hidden;
 }
