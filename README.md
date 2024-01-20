@@ -26,7 +26,6 @@ MediCare is a web application that aims to provide users with information about 
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory using the terminal.
-3. Follow the setup instructions in the [Installation Guide](installation-guide.md) for setting up the development environment.
 
 ## Usage
 
