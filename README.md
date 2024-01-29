@@ -4,12 +4,14 @@ Welcome to the MediCare project repository! This repository hosts the source cod
 
 ## Table of Contents
 
-- [About](#about)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [MediCare Project](#medicare-project)
+  - [Table of Contents](#table-of-contents)
+  - [About](#about)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## About
 
@@ -26,7 +28,6 @@ MediCare is a web application that aims to provide users with information about 
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory using the terminal.
-3. Follow the setup instructions in the [Installation Guide](installation-guide.md) for setting up the development environment.
 
 ## Usage
 
