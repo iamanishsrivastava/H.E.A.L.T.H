@@ -22,12 +22,7 @@ const analytics = getAnalytics(app);
 // init services
 const db = getFirestore()
 
-// collection ref
-const colRef = collection(db, 'medicine')
-
-
 // Assume you have a search input field with id "searchInput" and a button with id "searchButton" in your HTML
-
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const resultsDiv = document.getElementById('resultsDiv'); // This is where you'll display the search results
@@ -35,7 +30,7 @@ const resultsDiv = document.getElementById('resultsDiv'); // This is where you'l
 searchButton.addEventListener('click', () => {
     const searchTerm = searchInput.value.trim().toLowerCase();
 
-    // Create a reference to the "Medicine" collection
+    // Create a reference to the "medicine" collection
     const medicineRef = collection(db, 'medicine');
 
     // Construct a query to search for the medicine by name or symptom
@@ -45,6 +40,7 @@ searchButton.addEventListener('click', () => {
     getDocs(medicineQuery)
         .then((querySnapshot) => {
             // Clear previous search results
+            
             resultsDiv.innerHTML = '';
 
             // Check if any documents match the search term
@@ -53,14 +49,35 @@ searchButton.addEventListener('click', () => {
             } else {
                 // Display the search results   
                 querySnapshot.forEach((doc) => {
+                    let capitalizedName="", capitalizedSymptoms="", capitalizedUsage="";
                     const medicineData = doc.data();
+
                     const resultItem = document.createElement('div');
                     resultItem.classList.add('highlight-text'); // Add a CSS class
-                    // Capitalize the first letter of the name and symptoms
-                    const capitalizedName = capitalizeFirstLetter(medicineData.Name);
-                    const capitalizedSymptoms = capitalizeFirstLetter(medicineData.Symptoms);
-                    const capitalizedUsage = capitalizeFirstLetter(medicineData.Usage);
-                    resultItem.innerHTML = `Name: ${capitalizedName}<br>Symptoms: ${capitalizedSymptoms}<br>Usage: ${capitalizedUsage}`;
+                    
+                    // Conditions to deal with null values of fields and print Not Found error
+                    // then Capitalize the first letter of the name and symptoms
+                    if(medicineData.Name!=null){
+                        capitalizedName = capitalizeFirstLetter(medicineData.Name);
+                        resultItem.innerHTML+=`Name: ${capitalizedName}<br>`;
+                    }
+                    else
+                        resultItem.innerHTML+=`Name: Not found<br>`;
+
+                    if(medicineData.Symptoms!=null){
+                        capitalizedSymptoms = capitalizeFirstLetter(medicineData.Symptoms);
+                        resultItem.innerHTML+=`Symptoms: ${capitalizedSymptoms}<br>`;
+                    }
+                    else
+                        resultItem.innerHTML+=`Symptoms: Not found<br>`;
+
+                    if(medicineData.Usage!=null){
+                        capitalizedUsage = capitalizeFirstLetter(medicineData.Usage);
+                        resultItem.innerHTML+=`Usage: ${capitalizedUsage}<br>`;
+                    }
+                    else
+                        resultItem.innerHTML+=`Usage: Not found<br>`;
+
                     resultsDiv.appendChild(resultItem);
                 });
             }
@@ -71,5 +88,10 @@ searchButton.addEventListener('click', () => {
 });
 
 function capitalizeFirstLetter(string) {
+    // Check if the input string is undefined, null, or empty
+    if (!string) {
+        return ""; // Return an empty string or handle the case as needed
+    }
+    // Capitalize the first letter of the input string
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
