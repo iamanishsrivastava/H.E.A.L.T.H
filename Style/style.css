@@ -1,517 +1,492 @@
+/* Default Configuration for both screens (mobile, web) */
 * {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px; /* Reset font size for desktop */
+}
+
+/* Reset other styles for desktop as needed */
+/* Brown-Teal Green Theme */
+body.brown-teal {
+  background-color: #1b9c85;
+  color: white;
+}
+
+body.navy-blue-light {
+  background-color: #e8f6ef;
+  color: black;
+}
+
+/* NavControl - NavBar - Header */
+/* Circular Menu */
+.circular-menu {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #4c4c6d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+/* Plus/Cross Symbol - NavControl */
+.menu-icon {
+  color: #ffe194;
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.circular-menu-list {
+  position: fixed;
+  top: 45px;
+  right: 30px;
+  height: 175px;
+  width: 40px;
+  transform: translateX(50%);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Disable pointer events when hidden */
+  transition: opacity 0.3s, transform 0.3s; /* Add transitions for opacity and transform */
+}
+
+.circular-menu-list li {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.circular-menu-list a {
+  text-decoration: none;
+  color: #ffe194;
+  font-size: 16px;
+  display: block;
+  transition: color 0.3s;
+}
+
+.circular-menu-list a:hover {
+  color: #1b9c85;
+}
+
+/* Show menu items when the show class is added */
+.circular-menu-list.show {
+  opacity: 10;
+  pointer-events: auto; /* Re-enable pointer events when shown */
+  transform: translateX(50%) translateY(10px); /* Adjust translateY to your preference */
+  background-color: #4c4c6d;
+  color: #ffe194;
+  border-radius: 20px;
+}
+
+.navbar-list li a {
+  text-decoration: none;
+  color: #ffe194;
+  transition: color 0.3s; /* for smooth color change */
+}
+
+.navbar-list li a:hover {
+  color: #1b9c85;
+}
+
+.navbar.scrolled {
+  background-color: rgba(76, 76, 109, 0.9);
+}
+
+/* Theme Toggle Label */
+.navbar-list .theme-toggle-label {
+  width: 45px;
+  height: 24px;
+  background-color: #ffe194;
+  border-radius: 25px;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  overflow: hidden; /* Hide overflowing images */
+}
+
+/* Theme Icon (Sun and Moon) */
+.navbar-list .theme-icon {
+  width: 19px;
+  height: 24px;
+  transition: transform 0.3s;
+  position: absolute;
+}
+
+/* Light Mode Icon */
+.light {
+  left: 0px;
+  transform: translateX(0);
+}
+
+/* Dark Mode Icon */
+.dark {
+  right: 0px;
+  transform: translateX(100%);
+}
+
+/* Theme Toggle Checked State */
+#theme-toggle-checkbox:checked + .theme-toggle-label .light {
+  transform: translateX(150%);
+}
+
+#theme-toggle-checkbox:checked + .theme-toggle-label .dark {
+  transform: translateX(0);
+}
+
+/* to ensure that the checkbox remains functional while being hidden */
+.hidden {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Light mode styles */
+.light-mode .contact-section {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Dark mode styles */
+.dark-mode .contact-section {
+  background-color: #4c4c6d;
+  color: #e8f6ef;
+}
+
+#contact {
+  padding: 100px;
+}
+
+.contact-section {
+  text-align: center;
+  display: block;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffff; /* Initial background color */
+  color: #333333; /* Initial text color */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-form input:hover,
+.contact-form input:focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+  background-color: #4c4c6d; /* Hover and focus background color */
+  color: #ffe194; /* Hover and focus text color */
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #4c4c6d;
+  color: #e8f6ef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #333333;
+  color: #ffe194;
+}
+
+.contact-info {
+  margin-top: 40px;
+}
+
+.contact-info-box {
+  margin-top: 35px;
+  margin-bottom: auto;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.contact-info-box p:hover {
+  color: #4c4c6d;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-link {
+  display: inline-block;
+  margin-right: 10px;
+  color: #e8f6ef;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-link:hover {
+  color: #4c4c6d;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #4c4c6d;
+  color: #ffe194;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #ffe194;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.footer-links a:hover {
+  color: #1b9c85;
+}
+
+/* Larger Screens (Desktop) Styles */
+@media (min-width: 769px) {
+  /* Navigation bar */
+  .navbar {
+    background-color: #4c4c6d;
+    padding: 0;
+    position: sticky;
+    top: 0; /* Stick the navbar to the top */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    z-index: 100; /* Make sure the navbar stays above other content */
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+  }
+
+  /* Styling for the navigation list items */
+  .navbar-list {
+    list-style: none;
+    display: flex;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-/* Larger Screens (Desktop) Styles - Your existing CSS for desktop */
-@media (min-width: 769px) {
-    body {
-        font-size: 16px; /* Reset font size for desktop */
-    }
-
-    .navbar-list {
-        flex-direction: row; /* Reset navigation items to horizontal layout */
-        align-items: center; /* Align items to the center */
-        background-color: #4c4c6d; /* Background color for desktop navbar */
-    }
-
-    .navbar-list li {
-        margin: 0 15px;
-    }
-
-    .navbar-list li a {
-        padding: 0; /* Reset padding for desktop links */
-    }
-
-    /* Reset other styles for desktop as needed */
-    /* Brown-Teal Green Theme */
-    body.brown-teal {
-        background-color: #1b9c85;
-        color: white;
-    }
-
-
-    body.navy-blue-light {
-        background-color: #E8F6EF;
-        color: black;
-    }
-
-    /* NavControl - NavBar - Header */
-    /* Circular Menu */
-    .circular-menu {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 30px;
-        height: 30px;
-        background-color: #4c4c6d;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1000;
-        transition: background-color 0.3s;
-    }
-
-    /* Plus/Cross Symbol - NavControl */
-    .menu-icon {
-        color: #ffe194;
-        font-size: 24px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: transform 0.3s, color 0.3s;
-    }
-
-    .circular-menu-list {
-        position: fixed;
-        top: 45px;
-        right: 30px;
-        height: 175px;
-        width: 40px;
-        transform: translateX(50%);
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        opacity: 0; /* Initially hidden */
-        pointer-events: none; /* Disable pointer events when hidden */
-        transition: opacity 0.3s, transform 0.3s; /* Add transitions for opacity and transform */
-    }
-
-    .circular-menu-list li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .circular-menu-list a {
-        text-decoration: none;
-        color: #ffe194;
-        font-size: 16px;
-        display: block;
-        transition: color 0.3s;
-    }
-
-    .circular-menu-list a:hover {
-        color: #1b9c85;
-    }
-
-    /* Show menu items when the show class is added */
-    .circular-menu-list.show {
-        opacity: 10;
-        pointer-events: auto; /* Re-enable pointer events when shown */
-        transform: translateX(50%) translateY(10px); /* Adjust translateY to your preference */
-        background-color: #4c4c6d;
-        color: #ffe194;
-        border-radius: 20px;
-    }
-
-    /* Navigation bar */
-    .navbar {
-        background-color: #4c4c6d;
-        padding: 0;
-        position: sticky;
-        top: 0; /* Stick the navbar to the top */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 45px;
-        z-index: 100; /* Make sure the navbar stays above other content */
-        transition: background-color 0.3s; /* Add transition for smooth color change */
-    }
-
-    /* Styling for the navigation list items */
-    .navbar-list {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-list li {
-        margin: 0 15px;
-    }
-
-    .navbar-list li a {
-        text-decoration: none;
-        color: #ffe194;
-        transition: color 0.3s; /* for smooth color change */
-    }
-
-    .navbar-list li a:hover {
-        color: #1b9c85;
-    }
-
-    .navbar.scrolled {
-        background-color: rgba(76, 76, 109, 0.9);
-    }
-
-    /* Theme Toggle Label */
-    .navbar-list .theme-toggle-label {
-        width: 45px;
-        height: 24px;
-        background-color: #ffe194;
-        border-radius: 25px;
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        cursor: pointer;
-        overflow: hidden;  /* Hide overflowing images */
-    }
-
-    /* Theme Icon (Sun and Moon) */
-    .navbar-list .theme-icon {
-        width: 19px;
-        height: 24px;
-        transition: transform 0.3s;
-        position: absolute;
-    }
-
-    /* Home Section */
-    #home {
-        width: 100%;
-        min-height: 100vh;
-        margin-top: 25px;
-        /* display: flex; */
-        justify-content: center;
-        /* align-items: center; */
-        flex-direction: column;
-    }
-
-    /* container - Home Section  */
-    .container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .main-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .search-med-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        width: 100%;
-    }
-
-    .search-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        border: 1px solid #e8f6ef;
-        border-radius: 25px;
-        padding-left: 10px;
-    }
-
-    .search-input {
-        width: 41rem;
-        border: none;
-        outline: none;
-        background-color: transparent;
-        color: white;
-    }
-
-    /* Style for the placeholder text in the search input */
-    .search-input::placeholder {
-        color: #e8f6ef; /* Change this color to your desired color */
-    }
-
-    /* Search Button - Home Section */
-    .search-button {
-        background-color: #4c4c6d; /* Navy button */
-        color: #e8f6ef;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 0 25px 25px 0;
-        cursor: pointer;
-    }
-
-    /* Medicine Info - Home Section */
-    .med-info-container {
-        margin-top: 20px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
-
-    .med-info {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 10px;
-        width: 80%;
-        border-radius: 10px;
-        text-align: center;
-    }
-
-    #med-info-image {
-        height: 155px;
-        border: 1px #e8f6ef solid;
-        border-radius: 25%;
-    }
-
-    .medical-related-info {
-        display: flex;
-        gap: 20px;
-        padding: 10px;
-        justify-content: center;
-    }
-
-    .medical-info-column {
-        flex: 1;
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 20px;
-        height: 250px;
-        border-radius: 10px;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    /* Light Mode Icon */
-    .light {
-        left: 0px;
-        transform: translateX(0);
-    }
-
-    /* Dark Mode Icon */
-    .dark {
-        right: 0px;
-        transform: translateX(100%);
-    }
-
-    /* Theme Toggle Checked State */
-    #theme-toggle-checkbox:checked + .theme-toggle-label .light {
-        transform: translateX(150%);
-    }
-
-    #theme-toggle-checkbox:checked + .theme-toggle-label .dark {
-        transform: translateX(0);
-    }
-
-    /* to ensure that the checkbox remains functional while being hidden */
-    .hidden {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    /* Other Sections */
-    #about, #services, #test, #contact {
-        width: 100%;
-        min-height: 100vh;
-        /* padding: 100px 0; */
-        color: #e8f6ef;
-        text-align: center;
-    }
-
-    /* Light mode styles */
-    .light-mode .contact-section {
-        background-color: #ffffff;
-        color: #333333;
-    }
-
-    /* Dark mode styles */
-    .dark-mode .contact-section {
-        background-color: #4c4c6d;
-        color: #e8f6ef;
-    }
-
-    #contact {
-        padding: 100px;
-    }
-
-    .contact-section {
-        text-align: center;
-        display: block;
-    }
-
-    .contact-section h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-
-    .contact-section p {
-        font-size: 1.2rem;
-        margin-bottom: 40px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border: none;
-        border-radius: 5px;
-        background-color: #ffffff; /* Initial background color */
-        color: #333333; /* Initial text color */
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    .contact-form input:hover,
-    .contact-form input:focus,
-    .contact-form textarea:hover,
-    .contact-form textarea:focus {
-        background-color: #4c4c6d; /* Hover and focus background color */
-        color: #ffe194; /* Hover and focus text color */
-    }
-
-    .contact-form button {
-        padding: 10px 20px;
-        background-color: #4c4c6d;
-        color: #e8f6ef;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-
-    .contact-form button:hover {
-        background-color: #333333;
-        color: #ffe194;
-    }
-
-    .contact-info {
-        margin-top: 40px;
-    }
-
-    .contact-info-box {
-        margin-top: 35px;
-        margin-bottom: auto;
-    }
-
-    .contact-info p {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-    }
-
-    .contact-info-box p:hover{
-        color: #4c4c6d;
-    }
-
-    .social-links {
-        margin-top: 20px;
-    }
-
-    .social-link {
-        display: inline-block;
-        margin-right: 10px;
-        color: #e8f6ef;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .social-link:hover {
-        color: #4c4c6d;
-    }
-
-    /* Footer styles */
-    .footer {
-        background-color: #4c4c6d;
-        color: #ffe194;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .footer p {
-        font-size: 1rem;
-        margin-bottom: 10px;
-    }
-
-    .footer-links a {
-        color: #ffe194;
-        text-decoration: none;
-        margin-right: 15px;
-    }
-
-    .footer-links a:hover {
-        color: #1b9c85;
-    }
-
-    /* others */
-    .container h2 {
-        font-size: 2rem;
-        margin-bottom: 20px;
-    }
-}
-
-.container p {
-    font-size: 1.2rem;
-}
-
-.test-container {
-    margin-top: 10%;
-}
-
-.container h2 {
-    font-family: 'Allura', cursive;
-    font-size: 52px;
-    margin-bottom: 60px;
+  }
+
+  .navbar-list li {
+    margin: 0 15px;
+  }
+
+  /* Home Section */
+  #home {
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* container - Home Section  */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
     text-align: center;
-}
+  }
 
-.team {
+  .search-med-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .search-input {
+    width: 41rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+  }
+
+  /* Style for the placeholder text in the search input */
+  .search-input::placeholder {
+    color: #e8f6ef; /* Change this color to your desired color */
+  }
+
+  /* Search Button - Home Section */
+  .search-button {
+    background-color: #4c4c6d; /* Navy button */
+    color: #e8f6ef;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+  }
+
+  /* Search Bar */
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e8f6ef;
+    border-radius: 25px;
+    padding-left: 10px;
+  }
+
+  /* Medicine Info - Home Section */
+  .med-info-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .med-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  #med-info-image {
+    height: 155px;
+    border: 1px #e8f6ef solid;
+    border-radius: 25%;
+  }
+
+  .medical-related-info {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  .medical-info-column {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* Testimonials */
+  #test {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 100px 0; */
+    color: #e8f6ef;
+    text-align: center;
+  }
+
+  .team {
     display: flex;
     /* text-align: center; */
     width: auto;
     justify-content: center;
-}
+  }
 
-.team :hover {
+  .team :hover {
     width: auto;
     /* text-align: center; */
     height: auto;
-}
+  }
 
-/* Base styles for .doctors */
-.doctors {
+  /* Base styles for .doctors */
+  .doctors {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Align the content vertically in the center */
+    align-items: center;
     justify-content: center;
     background: #4c4c6d;
     border-radius: 10px;
     margin: 5px;
-    height: 520px;
-    width: 400px;
+    height: 480px;
+    width: 250px;
     line-height: 20px;
     color: white;
     position: relative;
     transition: transform 0.3s; /* Add a smooth transition effect */
     opacity: 90%;
-}
+  }
 
-.doctors h3 {
+  /* Styles for hover effect */
+  .doctors:hover {
+    /* Add a slight scale effect on hover */
+    transform: scale(1.05); /* Reduce the scale effect */
+    opacity: 1;
+    height: 500px;
+    width: 650px;
+  }
+
+  .doctors h3 {
     color: #ffe194;
     font-size: 26px;
     margin-top: 20px; /* Adjusted for spacing */
-}
+  }
 
-p.speciality {
+  p.specialty {
     color: #e8f6ef;
     background-color: #333333;
     font-size: 14px;
     text-transform: uppercase;
     margin: 12px;
     text-align: center !important;
-}
+  }
 
-/* Styles for paragraph visibility on hover */
-.doctors p {
+  /* Styles for paragraph visibility on hover */
+  .doctors p {
     text-align: justify;
     margin: 15px;
     /* Initially hidden */
@@ -519,52 +494,45 @@ p.speciality {
     /* Move the content up */
     transform: translateY(-10px);
     /* Add transitions for opacity and transform */
-    transition: opacity 0.3s, transform 0.3s;
-}
+    transition: transform 0.3s;
+  }
 
-/* Styles for hover effect */
-.doctors:hover {
-    /* Add a slight scale effect on hover */
-    transform: scale(1.05); /* Reduce the scale effect */
-    opacity: 1;
-    height: 490px;
-}
-
-.doctors:hover p {
+  .doctors:hover p {
     /* Adjust paragraph visibility on hover */
     width: 70%;
     opacity: 1; /* Show the description on hover */
     transform: translateY(0); /* Reset the transform to its original position */
-}
+  }
 
-/* Styles for disabling images and rotating names */
-.doctors:not(.active) .team_img img {
+  /* Styles for disabling images and rotating names */
+  .doctors:not(.active) .team_img img {
     /* Make the image invisible */
-    opacity: 0; 
+    opacity: 0;
     overflow: hidden;
-}
+  }
 
-.doctors:not(.active) {
+  .doctors:not(.active) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 490px;
-}
+    height: 480px;
+    width: 100px;
+  }
 
-.doctors:not(.active) h3 {
+  .doctors:not(.active) h3 {
     /* Rotate the names */
     transform: rotate(90deg);
     /* Remove any margin to center the rotated text */
     margin: 0;
-}
+  }
 
-.doctors:not(.active) p {
+  .doctors:not(.active) p {
     overflow: hidden;
-}
+  }
 
-.team.doctors.team_img {
+  .team.doctors.team_img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -574,20 +542,214 @@ p.speciality {
     transform: translateX(-50%);
     background: #76d4d4;
     /* Hide overflowing content */
-    overflow: hidden; 
-}
+    overflow: hidden;
+  }
 
-.team.doctors.team_img img {
+  .team.doctors.team_img img {
     /* Ensure the image fits within its container */
     width: 100%;
+  }
+
+  /* Other Sections */
+  #about,
+  #services,
+  #contact {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    /* padding: 100px 0; */
+    color: #e8f6ef;
+    text-align: center;
+  }
+}
+
+/* Configuration for mobile screen */
+@media (max-width: 769px) {
+  /* Navigation bar [yet to design] - aside */
+  .navbar {
+    display: none;
+    background-color: #4c4c6d;
+    padding: 0;
+    position: fixed;
+    top: 0; /* Stick the navbar to the top */
+    /* align-items: ; */
+    height: 100vh;
+    width: 30vw;
+    z-index: 100; /* Make sure the navbar stays above other content */
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+  }
+
+  /* Styling for the navigation list items */
+  .navbar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar-list li {
+    margin: 0 15px;
+  }
+
+  .navbar-list li a {
+    text-decoration: none;
+    color: #ffe194;
+    transition: color 0.3s; /* for smooth color change */
+  }
+
+  .navbar-list li a:hover {
+    color: #1b9c85;
+  }
+
+  /* Home Section */
+  #home {
+    width: 100%;
+    min-height: 90vh;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* container - Home Section  */
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .main-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .search-med-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 40%;
+    margin-bottom: 10px;
+  }
+
+  .search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #e8f6ef;
+    border-radius: 25px;
+    padding-left: 10px;
+  }
+  .search-input {
+    width: 65vw;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+  }
+
+  /* Style for the placeholder text in the search input */
+  .search-input::placeholder {
+    color: #e8f6ef; 
+  }
+
+  /* Search Button - Home Section */
+  .search-button {
+    background-color: #4c4c6d; /* Navy button */
+    color: #e8f6ef;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+  }
+
+  /* Medicine Info - Home Section */
+  .med-info-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .med-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    width: 80%;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  #med-info-title {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+  }
+
+  #med-info-image {
+    height: 75px;
+    border: 1px #e8f6ef solid;
+    border-radius: 25%;
+  }
+
+  .medical-related-info {
+    gap: 20px;
+    padding: 10px;
+    justify-content: center;
+  }
+
+  #usage,
+  #sideEffects {
+    display: none;
+  }
+
+  .medical-info-column {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    height: 250px;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  /* results */
+  #resultsDiv {
+    font-size: 1.30rem;
+  }
+
+  /* Testimonial Section */
+  #test {
+    display: none;
+  }
+
+  /* Others */
+  hr {
+    display: none;
+  }
+}
+
+/* others */
+.container h2 {
+  font-family: "Allura", cursive;
+  font-size: 52px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.container p {
+  font-size: 1.2rem;
 }
 
 /* Temporary disabled #about, #services section - until further improvisation and notice */
-#about, #services {
-    display: none;
+#about,
+#services {
+  display: none;
 }
 
 .highlight-text {
-    font-size: 18px;
-    overflow: hidden;
+  font-size: 18px;
+  overflow: hidden;
 }

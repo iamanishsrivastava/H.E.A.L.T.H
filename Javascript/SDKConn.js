@@ -51,7 +51,7 @@ searchButton.addEventListener('click', () => {
             if (querySnapshot.size === 0) {
                 resultsDiv.innerHTML = 'No results found.';
             } else {
-                // Display the search results
+                // Display the search results   
                 querySnapshot.forEach((doc) => {
                     const medicineData = doc.data();
                     const resultItem = document.createElement('div');

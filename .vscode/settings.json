@@ -1,3 +1,8 @@
 {
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "files.autoSave": "afterDelay",
+  "workbench.preferredLightColorTheme": "Black",
+  "workbench.preferredDarkColorTheme": "Black",
+  "workbench.editor.wrapTabs": true,
+  "window.autoDetectColorScheme": true
 }
