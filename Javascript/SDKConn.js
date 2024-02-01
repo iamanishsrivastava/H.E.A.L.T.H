@@ -4,14 +4,15 @@ import { getFirestore, collection ,query, where, getDocs } from "https://www.gst
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Official Firebase Database - v1.0
 const firebaseConfig = {
-    apiKey: "AIzaSyA37muoW74fX8Az6cMzde-KKMTK1MUKBeQ",
-    authDomain: "medicare-602b5.firebaseapp.com",
-    projectId: "medicare-602b5",
-    storageBucket: "medicare-602b5.appspot.com",
-    messagingSenderId: "260736167415",
-    appId: "1:260736167415:web:dd175d7bcc15cbffba52f2",
-    measurementId: "G-19ZX6LNE4R"
+    apiKey: "AIzaSyD4o1v6UK1kdDEXqNr6hfAv-qJFS4FnonY",
+    authDomain: "medicare-e4720.firebaseapp.com",
+    projectId: "medicare-e4720",
+    storageBucket: "medicare-e4720.appspot.com",
+    messagingSenderId: "709271768982",
+    appId: "1:709271768982:web:49cc356f5725f0950a97b7",
+    measurementId: "G-XWM48C3Z7D"
   };
 
 // Initialize Firebase
