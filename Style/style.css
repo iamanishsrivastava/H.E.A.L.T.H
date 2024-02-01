@@ -397,7 +397,29 @@ body.navy-blue-light {
     text-align: center;
   }
 
-  #med-info-image {
+  #med-info-title {
+    align-items: center;
+    font-family: "Allura", cursive;
+    font-size: 52px;
+    height: 60px;
+  }
+
+  #medName {
+    font-size: 2rem !important;
+    margin-bottom: 15px;
+  }
+  
+  #medName,
+  #medUsage,
+  #medSym,
+  #medAdvice {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    height: 35px;
+    align-items: center;
+  }
+
+  #med-image {
     height: 155px;
     border: 1px #e8f6ef solid;
     border-radius: 25%;
@@ -417,7 +439,18 @@ body.navy-blue-light {
     height: 250px;
     border-radius: 10px;
     text-align: center;
-    overflow: hidden;
+    overflow-y: auto;
+  }
+
+  #column-title{
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  #medUsage,
+  #medSym,
+  #medAdvice {
+    text-align: left;
   }
 
   /* Testimonials */
@@ -561,6 +594,10 @@ body.navy-blue-light {
     color: #e8f6ef;
     text-align: center;
   }
+
+  hr {
+    display: none;
+  }
 }
 
 /* Configuration for mobile screen */
@@ -655,7 +692,7 @@ body.navy-blue-light {
 
   /* Style for the placeholder text in the search input */
   .search-input::placeholder {
-    color: #e8f6ef; 
+    color: #e8f6ef;
   }
 
   /* Search Button - Home Section */
@@ -667,8 +704,8 @@ body.navy-blue-light {
     border-radius: 0 25px 25px 0;
   }
 
-  /* Medicine Info - Home Section */
-  .med-info-container {
+   /* Medicine Info - Home Section */
+   .med-info-container {
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
@@ -684,40 +721,58 @@ body.navy-blue-light {
   }
 
   #med-info-title {
-    margin-bottom: 5px;
-    font-size: 2.5rem;
+    align-items: center;
+    font-family: "Allura", cursive;
+    font-size: 1.5rem;
+    height: 25px;
   }
 
-  #med-info-image {
-    height: 75px;
+  #medName {
+    font-size: 1rem !important;
+  }
+  
+  #medName,
+  #medUsage,
+  #medSym,
+  #medAdvice {
+    margin-top: 10px;
+    font-size: 1rem;
+    height: 35px;
+    align-items: center;
+  }
+
+  #med-image {
+    height: 55px;
     border: 1px #e8f6ef solid;
     border-radius: 25%;
   }
 
   .medical-related-info {
-    gap: 20px;
     padding: 10px;
     justify-content: center;
-  }
-
-  #usage,
-  #sideEffects {
-    display: none;
   }
 
   .medical-info-column {
     flex: 1;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    height: 250px;
+    margin-bottom:15px;
+    height: 150px;
+    max-height: fit-content;
     border-radius: 10px;
     text-align: center;
-    overflow: hidden;
+    overflow-y: auto;
   }
 
-  /* results */
-  #resultsDiv {
-    font-size: 1.30rem;
+  #column-title{
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  #medUsage,
+  #medSym,
+  #medAdvice {
+    text-align: left;
   }
 
   /* Testimonial Section */
@@ -735,7 +790,7 @@ body.navy-blue-light {
 .container h2 {
   font-family: "Allura", cursive;
   font-size: 52px;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -752,4 +807,10 @@ body.navy-blue-light {
 .highlight-text {
   font-size: 18px;
   overflow: hidden;
+}
+
+
+a {
+  text-decoration: none;
+  color: white;
 }

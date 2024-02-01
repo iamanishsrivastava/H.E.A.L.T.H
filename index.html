@@ -9,7 +9,8 @@
 
      <!-- Font Awesome CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
- 
+    
+
     <link rel="stylesheet" href="Style/style.css">
     <title>MediCare</title>
 </head>
@@ -62,34 +63,35 @@
                     <h1 class="main-title">Info about<br>medicine/symptoms?</h1>
                     <div class="search-container">
                         <!-- Search Input - Home Section -->
-                        <input type="text" class="search-input" id="searchInput" placeholder="Type here to search">
+                        <input type="text" class="search-input" id="searchInput" placeholder="Type here to search...">
                         <button class="search-button" id="searchButton">SEARCH</button>
                     </div>
                 </div>
             </div>
             <div class="med-info">
-                <h2 id="med-info-title">Medicine Info</h2>
-                <img src="img/medicine-info-image.jpg" id="med-info-image" alt="Medicine Info Image">
+                <div id="med-info-title">Medicine Info</div>
+                <!-- "medName" from collection 'medicine' will appear here -->
+                <div id="medName">Search Medicine Name</div>
+                <img src="img/medicine-info-image.jpg" id="med-image" alt="Medicine Image">
                 <div class="medical-related-info">
                     <div class="medical-info-column" id="usage">
-                        <h3>Usage</h3>
-                        <p>Information about the medical uses of the medicine.</p>
+                        <div id="column-title">Usage</div>
+                        <div id="medUsage">Information about the medical uses of the medicine.</div>
                     </div>
                     <div class="medical-info-column" id="sideEffects">
-                        <h3>Side Effects</h3>
-                        <p>Information about the possible side effects of the medicine.</p>
+                        <div id="column-title">Symptoms</div>
+                        <div id="medSym">Information about the possible symptoms to use of the medicine.</div>
+                    </div>
+                    <div class="medical-info-column">
+                        <div id="column-title">Related Medical Advice</div>
+                        <div id="medAdvice">Experts Advice</div>
                     </div>
                     <!-- <div class="medical-info-column">
-                        <h3>Related Medical Advice</h3>
-                        <p>Advice and recommendations related to the medicine from medical experts.</p>
-                    </div> -->
-                    <div class="medical-info-column">
                         <h3>Results</h3>
-                         <!-- This is where you'll display the search results -->
                         <div id="resultsDiv">
                             are displayed here when you search.
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -178,8 +180,8 @@
                 </div>
                 <div class="col-lg contact-info-box">
                     <h2 class="section-title">Contact Information</h2>
-                    <p><i class="fas fa-phone"></i> Phone: +123 456 789</p>
-                    <p><i class="fas fa-envelope"></i> Email: info@mdcare.tech</p>
+                    <i class="fas fa-phone"></i> Phone: <a href="tel:+123456789" type="phone">+123 456 789</a><br>
+                    <i class="fas fa-envelope"></i> Email:<a href="mailto:team.medicareweb@gmail.com" type="email"> team.medicareweb@gmail.com</a>
                     <div class="social-links">
                         <!-- Social media links here -->
                         <a href="https://www.youtube.com" target="_blank" class="social-link"><i class="fab fa-youtube"></i></a>
@@ -213,7 +215,7 @@
     <!-- linking JS -->
     <script src="Javascript/script.js"></script>
 
-    <!-- linking SDK -->
+    <!-- linking SDK JS -->
     <script src="Javascript/SDKConn.js" type="module"></script>
 
 </body>

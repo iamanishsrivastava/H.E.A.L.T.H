@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-analytics.js";
 import { getFirestore, collection ,query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore.js";
 
 // Your web app's Firebase configuration
@@ -17,23 +16,29 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 
 // init services
-const db = getFirestore()
+const db = getFirestore();
 
 // Assume you have a search input field with id "searchInput" and a button with id "searchButton" in your HTML
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
-const resultsDiv = document.getElementById('resultsDiv'); // This is where you'll display the search results
+const medName = document.getElementById('medName'); // This is where you'll display the medicine name
+const medUsage = document.getElementById('medUsage'); // This is where you'll display the medicine usage
+const medSym = document.getElementById('medSym'); // This is where you'll display the medicine symptoms
+const medAdvice = document.getElementById('medAdvice'); // This is where you'll display the search results
 
+// variable for random image 
+let randomImageElement = document.getElementById('randomImage');
+
+// eventlistener for search button
 searchButton.addEventListener('click', () => {
     const searchTerm = searchInput.value.trim().toLowerCase();
 
     // Create a reference to the "medicine" collection
     const medicineRef = collection(db, 'medicine');
 
-    // Construct a query to search for the medicine by name or symptom
+    // Construct a query to search for the medicine by name or symptom (not yet implemented)
     const medicineQuery = query(medicineRef, where('Name', '==', searchTerm));
 
     // Execute the query
@@ -41,44 +46,55 @@ searchButton.addEventListener('click', () => {
         .then((querySnapshot) => {
             // Clear previous search results
             
-            resultsDiv.innerHTML = '';
+            medName.innerHTML = '';
+            medUsage.innerHTML = '';
+            medSym.innerHTML = '';
+            medAdvice.innerHTML = '';
 
             // Check if any documents match the search term
             if (querySnapshot.size === 0) {
-                resultsDiv.innerHTML = 'No results found.';
+                medName.innerHTML = "No results found for '"+searchInput.value+"'.";
+                medUsage.innerHTML = 'No results found.';
+                medSym.innerHTML = 'No results found.';
+                medAdvice.innerHTML = 'No results found.';
             } else {
+
+                // Event listener for the search button
+                document.getElementById('searchButton').addEventListener('click', updateImage(medName));
+
                 // Display the search results   
                 querySnapshot.forEach((doc) => {
-                    let capitalizedName="", capitalizedSymptoms="", capitalizedUsage="";
+                    let capitalizedName="", capitalizedSymptoms="", capitalizedUsage="", capitalizedAdvice="";
                     const medicineData = doc.data();
-
-                    const resultItem = document.createElement('div');
-                    resultItem.classList.add('highlight-text'); // Add a CSS class
                     
-                    // Conditions to deal with null values of fields and print Not Found error
-                    // then Capitalize the first letter of the name and symptoms
+                    // Conditions to deal with null values of fields and print Not Found error then Capitalize the first letter of the name and symptoms
                     if(medicineData.Name!=null){
                         capitalizedName = capitalizeFirstLetter(medicineData.Name);
-                        resultItem.innerHTML+=`Name: ${capitalizedName}<br>`;
+                        medName.innerHTML+=`Name: ${capitalizedName}<br>`;
                     }
                     else
-                        resultItem.innerHTML+=`Name: Not found<br>`;
+                        medName.innerHTML+=`No results found for '`+{searchInput}+`'.<br>`;
 
                     if(medicineData.Symptoms!=null){
                         capitalizedSymptoms = capitalizeFirstLetter(medicineData.Symptoms);
-                        resultItem.innerHTML+=`Symptoms: ${capitalizedSymptoms}<br>`;
+                        medSym.innerHTML+=`${capitalizedSymptoms}<br>`;
                     }
                     else
-                        resultItem.innerHTML+=`Symptoms: Not found<br>`;
+                        medSym.innerHTML+=`Not found<br>`;
 
                     if(medicineData.Usage!=null){
                         capitalizedUsage = capitalizeFirstLetter(medicineData.Usage);
-                        resultItem.innerHTML+=`Usage: ${capitalizedUsage}<br>`;
+                        medUsage.innerHTML+=`${capitalizedUsage}<br>`;
                     }
                     else
-                        resultItem.innerHTML+=`Usage: Not found<br>`;
+                        medUsage.innerHTML+=`Not found<br>`;
 
-                    resultsDiv.appendChild(resultItem);
+                    if(medicineData.Advice!=null){
+                        capitalizedAdvice = capitalizeFirstLetter(medicineData.Advice);
+                        medAdvice.innerHTML+=`${capitalizedAdvice}<br>`;
+                    }
+                    else
+                        medAdvice.innerHTML+=`Experts advice not available at the moment, please try again later.<br>`;
                 });
             }
         })
@@ -87,6 +103,33 @@ searchButton.addEventListener('click', () => {
         });
 });
 
+// Function to update image source based on search term
+function updateImage(searchTerm) {
+    let medImage = document.getElementById('med-image');
+ 
+    // If search term is empty, set default image
+    if (!searchTerm) {
+       medImage.src = "img/medicine-info-image.jpg";
+       return;
+    }
+ 
+    /// Fetch a medicine-related image from Unsplash based on the search term
+    fetch(`https://source.unsplash.com/featured/156x156/?medicine,${searchTerm}`)
+    .then(response => {
+        // Check if the response is redirected to an image URL
+        if (response.redirected) {
+            // Update the src attribute of the image element with the redirected URL
+            medImage.src = response.url;
+        } else {
+            console.error('Unexpected response:', response);
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching image:', error);
+    });
+}
+
+// capitalizing first letters of the string
 function capitalizeFirstLetter(string) {
     // Check if the input string is undefined, null, or empty
     if (!string) {
