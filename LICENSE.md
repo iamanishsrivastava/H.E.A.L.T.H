@@ -7,19 +7,29 @@ This Custom Contribution License ("License") governs your rights and responsibil
 ## Definitions
 
 1. "Contributor" means any individual or legal entity that makes a contribution to the Project.
-
 2. "Contribution" means any original work of authorship, including any modifications or additions to an existing work, submitted by a Contributor to the Project.
+
+## Understanding Contributions and Ownership
+
+### Contribution Definition
+
+Contributions to the MediCare project can include, but are not limited to, code, design, documentation, and ideas. This encompasses any original work of authorship that is submitted to the project to enhance its functionality, usability, or overall quality.
+
+### Ownership Rights
+
+- **Code Contributions:** Individuals who create and submit code retain ownership of their contributions. By submitting code to the project, they grant the project lead and other contributors a license to use, modify, and distribute the code as part of the project.
+- **Design Contributions:** Ownership of design contributions can vary. It's essential to clarify ownership rights in specific agreements or discussions. In some cases, the individual who creates the design may retain ownership, while in others, ownership may be transferred to the project lead or the project itself. If not specified, ownership defaults to the project lead, [Anish Srivastava](https://github.com/iamanishsrivastava).
+- **Documentation Contributions:** Similar to code contributions, individuals who create and submit documentation typically retain ownership of their work. They grant the project lead and other contributors a license to use, modify, and distribute the documentation as part of the project.
+- **Idea Contributions:** Ideas, suggestions, and feedback shared by individuals may not have traditional ownership rights. They are often considered part of the collective knowledge and collaboration within the project.
 
 ## License Grant
 
 1. Contributors hereby grant to [Anish Srivastava](https://github.com/iamanishsrivastava), the exclusive, irrevocable, worldwide, royalty-free right, with the right to sublicense, to use, copy, modify, merge, publish, distribute, sublicense, and/or sell the Contributions, either on a source code or binary basis, and/or to include the Contributions in any form or purpose, whether it is for commercial or non-commercial purposes.
-
-2. Contributors retain the copyright to their Contributions and may use them for their own purposes outside the Project only with the explicit approval of [Anish Srivastava](https://github.com/iamanishsrivastava).
+2. Contributors retain the copyright to their Contributions and may use them for their purposes outside the Project only with the explicit approval of [Anish Srivastava](https://github.com/iamanishsrivastava).
 
 ## Approval Process
 
 1. All Contributions must undergo a review and approval process by [Anish Srivastava](https://github.com/iamanishsrivastava) or its authorized representatives.
-
 2. [Anish Srivastava](https://github.com/iamanishsrivastava) reserves the right to reject any Contribution for any reason, including but not limited to contributions that do not align with the Project's goals or standards.
 
 ## Code of Conduct
