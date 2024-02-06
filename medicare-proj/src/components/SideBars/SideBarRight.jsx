@@ -1,3 +1,6 @@
+import React from "react";
+import './SideBarRight.css';
+
 function SideBarRight() {
   return (
     <aside className="sidebar-right">
