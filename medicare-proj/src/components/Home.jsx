@@ -1,16 +1,19 @@
-// import './Home.css'
+import './Home.css';
 
 
 function Home({ onSearchBarClick }) {
   return (
     <div className="home">
-      <div className="search-container gap-1">
+      <div className="search-container gap-2">
         <div className="search-info">
           info about
           <br />
           medicines/symptoms?
         </div>
         <div className="search-bar">
+        <div className="iconContainer">
+          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
+        </div>
           <input
             type="text"
             className="search-input"
@@ -19,9 +22,6 @@ function Home({ onSearchBarClick }) {
           />
         </div>
 
-        <div className="iconContainer">
-          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
-        </div>
       </div>
 
     </div>

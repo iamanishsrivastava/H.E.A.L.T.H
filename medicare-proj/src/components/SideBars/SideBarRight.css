@@ -1,0 +1,22 @@
+.user-icon{
+    height:90vh;
+    color: white;
+    font-size: 24px;
+    -webkit-text-stroke-width: 0.5px;
+}
+  
+  .settings-icon{
+    height: 40%;
+    color: white;
+    font-size: 24px;
+    -webkit-text-stroke-width: 0.5px;
+}
+  
+  .sidebar-right {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 85px;
+    justify-content: center;
+    align-items: center;
+}
