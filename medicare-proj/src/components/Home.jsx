@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-function Home({onClick}) {
+function Home({ onClick }) {
   return (
     <div className="home">
       <div className="search-container gap-1">
@@ -18,6 +18,10 @@ function Home({onClick}) {
             placeholder="type here to search"
             onClick={onClick}
           />
+        </div>
+
+        <div className="iconContainer">
+          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
         </div>
       </div>
       <div className="medc-container">
