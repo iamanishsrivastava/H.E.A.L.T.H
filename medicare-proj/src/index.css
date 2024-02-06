@@ -1,8 +1,6 @@
 #root {
-  background-color: #7B6767;
-  margin: 0;
-  padding: 0;
-  border-style: border-box;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 
