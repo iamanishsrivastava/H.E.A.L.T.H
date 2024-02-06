@@ -5,16 +5,16 @@ import Home from "./components/Home";
 import SideBarLeft from "./components/SideBars/SideBarLeft";
 import SideBarRight from "./components/SideBars/SideBarRight";
 import Searched from "./components/Searched";
+import Settings from "./components/Settings";
 
 function App() {
   const [content, setContent] = useState("");
 
-  const handleClick = (action, data) => {
-    if (action === "searchBarClicked") {
+  const handleClick = (action) => {
+    if (action === "onSearchBarClick") {
       setContent("searched");
-    } else if (action === "otherComponentClicked") {
-      // Set content to indicate that the other component should be rendered
-      setContent("otherComponent");
+    } else if (action === "onSettingsClick") {
+      setContent("onSettingsClick");
     } else {
       // Default action (e.g., go back to home)
       setContent("");
@@ -25,24 +25,27 @@ function App() {
   let renderedContent;
   if (content === "searched") {
     renderedContent = <Searched />;
-  } else if (content === "otherComponent") {
-    renderedContent = <OtherComponent />;
+  } else if (content === "onSettingsClick") {
+    renderedContent = <Settings />;
   } else {
     renderedContent = (
       <Home
-        onSearchBarClick={() => handleClick("searchBarClicked")}
-        onOtherComponentClick={() => handleClick("otherComponentClicked")}
+        onSearchBarClick={() => handleClick("onSearchBarClick")}
+        onSettingsClick={() => handleClick("onSettingsClick")}
       />
     );
   }
-  
+
   return (
     <>
-      <section className="main">
-        <SideBarLeft onIconClick={() => handleClick("home")}/>
-        {renderedContent}
-        <SideBarRight />
-      </section>
+        <div className="main">
+          <SideBarLeft onIconClick={() => handleClick("home")} />
+          {renderedContent}
+          <SideBarRight onIconClick={() => handleClick("onSettingsClick")} />
+        </div>
+        <div className="medc-container">
+          <p id="options">MEDICARE</p>
+        </div>
     </>
   );
 }

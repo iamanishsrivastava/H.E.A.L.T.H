@@ -1,6 +1,6 @@
-const Settings = (clickedSettings) => {
+const Settings = () => {
    return (
-      <center onClick="clickedSettings">Settings Option</center>
+      <center >Settings Option</center>
    )
 }
 

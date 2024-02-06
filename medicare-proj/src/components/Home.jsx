@@ -1,8 +1,7 @@
 // import './Home.css'
 
-import { useState } from "react";
 
-function Home({ onClick }) {
+function Home({ onSearchBarClick }) {
   return (
     <div className="home">
       <div className="search-container gap-1">
@@ -16,7 +15,7 @@ function Home({ onClick }) {
             type="text"
             className="search-input"
             placeholder="type here to search"
-            onClick={onClick}
+            onClick={onSearchBarClick}
           />
         </div>
 
@@ -24,9 +23,7 @@ function Home({ onClick }) {
           <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
         </div>
       </div>
-      <div className="medc-container">
-        <p id="options">MEDICARE</p>
-      </div>
+
     </div>
   );
 }
