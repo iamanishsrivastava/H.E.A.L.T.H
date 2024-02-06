@@ -1,34 +1,50 @@
-import './App.css';
+import React, { useState } from "react";
+
+import "./App.css";
+import Home from "./components/Home";
+import SideBarLeft from "./components/SideBars/SideBarLeft";
+import SideBarRight from "./components/SideBars/SideBarRight";
+import Searched from "./components/Searched";
 
 function App() {
+  const [content, setContent] = useState("");
 
+  const handleClick = (action, data) => {
+    if (action === "searchBarClicked") {
+      setContent("searched");
+    } else if (action === "otherComponentClicked") {
+      // Set content to indicate that the other component should be rendered
+      setContent("otherComponent");
+    } else {
+      // Default action (e.g., go back to home)
+      setContent("");
+    }
+  };
+
+  // Render content based on the value of the 'content' state
+  let renderedContent;
+  if (content === "searched") {
+    renderedContent = <Searched />;
+  } else if (content === "otherComponent") {
+    renderedContent = <OtherComponent />;
+  } else {
+    renderedContent = (
+      <Home
+        onSearchBarClick={() => handleClick("searchBarClicked")}
+        onOtherComponentClick={() => handleClick("otherComponentClicked")}
+      />
+    );
+  }
+  
   return (
     <>
       <section className="main">
-        <aside className="sidebar-left">
-          <i className="bi bi-house house-icon"></i>
-        </aside>
-        <div className="home">
-          <div className="search-container gap-1">
-            <div className="search-info">
-              info about<br/>medicines/symptoms?
-            </div>
-            <div className="search-bar">
-              <input type="text" className="search-input" placeholder='type here to search' />
-            </div>
-          </div>
-          <div className="medc-container">
-            <p id="options">
-              MEDICARE
-            </p>
-          </div>
-        </div>
-        <aside className="sidebar-right">
-          d
-        </aside>
+        <SideBarLeft onIconClick={() => handleClick("home")}/>
+        {renderedContent}
+        <SideBarRight />
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
