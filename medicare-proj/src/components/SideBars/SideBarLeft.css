@@ -1,15 +1,32 @@
-.house-icon{
-    height: 90vh;
-    color: white;
-    font-size: 24px;
-    -webkit-text-stroke-width: 0.5px;
-  }
-  
-  .sidebar-left {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 90px;
-    justify-content: center;
-    align-items: center;
-  }
+.house-icon-container {
+  margin-top: 2vh;
+}
+
+.house-icon {
+  color: white;
+  font-size: 24px;
+  -webkit-text-stroke-width: 0.5px;
+  cursor: pointer;
+}
+
+.settings-icon-container {
+  display: flex;
+  align-items:flex-end;
+  height: 100%;
+  margin-bottom: 1vh;
+}
+
+.settings-icon {
+  color: white;
+  font-size: 24px;
+  -webkit-text-stroke-width: 0.5px;
+  cursor: pointer;
+}
+
+.sidebar-left {
+  display: flex;
+  flex-direction: column;
+  height: 95vh;
+  width: 70px;
+  align-items: center;
+}

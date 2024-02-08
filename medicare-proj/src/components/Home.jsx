@@ -16,8 +16,8 @@ function Home({ onSearchBarClick }) {
             placeholder="type here to search"
             onClick={onSearchBarClick}
           />
-          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
-          <i class="bi bi-x clear-icon" aria-hidden="true"></i>
+          <i className="bi bi-filter filter-icon" aria-hidden="true"></i>
+          <i className="bi bi-x clear-icon" aria-hidden="true"></i>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import SideBarLeft from "./components/SideBars/SideBarLeft";
 import SideBarRight from "./components/SideBars/SideBarRight";
 import Searched from "./components/Searched";
-import Settings from "./components/Settings";
+// import SettingsMenu from "./components/SettingsMenu";
 
 function App() {
   const [content, setContent] = useState("");
@@ -26,7 +26,7 @@ function App() {
   if (content === "searched") {
     renderedContent = <Searched />;
   } else if (content === "onSettingsClick") {
-    renderedContent = <Settings />;
+    renderedContent = <Home />;
   } else {
     renderedContent = (
       <Home

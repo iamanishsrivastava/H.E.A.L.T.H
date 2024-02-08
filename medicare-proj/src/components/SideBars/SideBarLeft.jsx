@@ -1,11 +1,16 @@
 import React from "react";
-import './SideBarLeft.css';
+import "./SideBarLeft.css";
 
 function SideBarLeft({ onIconClick }) {
   return (
-    <aside className="sidebar-left">
-      <i onClick={onIconClick} className="bi bi-house-fill house-icon"></i>
-    </aside>
+    <div className="sidebar-left">
+      <nav className="house-icon-container">
+        <i onClick={onIconClick} className="bi bi-house-fill house-icon"></i>
+      </nav>
+      <nav className="settings-icon-container">
+        <i className="bi bi-gear settings-icon" onClick={onIconClick}></i>
+      </nav>
+    </div>
   );
 }
 

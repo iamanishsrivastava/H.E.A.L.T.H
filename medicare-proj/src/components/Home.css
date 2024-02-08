@@ -1,66 +1,67 @@
 .home {
-    /* display: grid;
+  /* display: grid;
     flex-direction: column;
     align-items: center;
     justify-content:center;
     height: 100%; */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #373737;
-    margin-top: 1vh;
-    width: 92vw;
-    height: 94vh;
-    box-shadow: 1px 1px 4.5px #1f1e1e;
-    border-radius: 2vh;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #373737;
+  margin-top: 1vh;
+  margin-right: 0%;
+  margin: 0%;
+  width: 94%;
+  height: 94vh;
+  box-shadow: 1px 1px 4.5px #1f1e1e;
+  border-radius: 2vh;
+  text-align: center;
 }
 
-.search-info{
+.search-info {
   color: white !important;
 }
 
-.search-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #373737;
-    margin-top: 1vh;
-    width: 92vw;
-    height: 94vh;
-    box-shadow: 1px 1px 4.5px #1f1e1e;
-    border-radius: 2vh;
-    text-align: center;
-}
+/* .search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #373737;
+  margin-top: 1vh;
+  width: 92vw;
+  height: 94vh;
+  box-shadow: 1px 1px 4.5px #1f1e1e;
+  border-radius: 2vh;
+  text-align: center;
+} */
 
 .search-bar {
-    position: relative;
-    height: 45px;
-    width: 455px;
-    border: 1.25px solid white;
-    border-radius: 10vh;
-    background-color: #373737;
-
+  position: relative;
+  height: 45px;
+  width: 455px;
+  border: 1.25px solid white;
+  border-radius: 10vh;
+  background-color: #373737;
 }
 
-  .search-input {
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    width: 100%; 
-    border: 1.25px solid white;
-    border-radius: 10vh;
-    color: white;       
-    background-color: #373737;
-    box-sizing: border-box;
-  }
-  
-  /* .icon-container {
+.search-input {
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  border: 1.25px solid white;
+  border-radius: 10vh;
+  color: white;
+  background-color: #373737;
+  box-sizing: border-box;
+}
+
+/* .icon-container {
     display: flex;
     flex-direction: row;
     position: fixed;
@@ -70,38 +71,37 @@
     left: 70vh;
     transform: translateY(-50%);
     cursor: pointer;/* /* Add a pointer cursor for interactivity */
-  
-  .filter-icon {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(-50%);
-    transition: opacity 0.3s ease-in-out;
-    cursor: pointer;
-  }
 
-  .clear-icon{
-    position: absolute;
-    left: 92%;
-    top: 50%;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(-50%);
-    transition: opacity 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  /* Show the icon when input is not empty */
-  .search-input:not(:placeholder-shown) + .filter-icon {
-    opacity: 1;
+.filter-icon {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-  .search-input:not(:placeholder-shown) + .clear-icon {
-    opacity: 1;
+.clear-icon {
+  position: absolute;
+  left: 92%;
+  top: 50%;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-  
-  /* .search-input {
+/* Show the icon when input is not empty */
+.search-input:not(:placeholder-shown) + .filter-icon {
+  opacity: 1;
+}
+
+.search-input:not(:placeholder-shown) + .clear-icon {
+  opacity: 1;
+}
+
+/* .search-input {
     align-items: center;
     text-align: center;
     height: 40px;
@@ -111,7 +111,3 @@
     background-color: #373737;
     color: white;
   } */
-
-
-  
-  
