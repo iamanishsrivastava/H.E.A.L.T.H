@@ -1,11 +1,11 @@
 import React from "react";
 import "./SideBarRight.css";
 
-function SideBarRight({ onIconClick }) {
+function SideBarRight({onProfileIconClick}) {
   return (
     <div className="sidebar-right">
       <aside className="user-icon-container">
-        <i className="bi bi-person-circle user-icon"></i>
+        <i onClick={onProfileIconClick} className="bi bi-person-circle user-icon"></i>
       </aside>
     </div>
   );

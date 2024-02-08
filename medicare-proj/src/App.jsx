@@ -1,11 +1,9 @@
-import React, { useState } from "react";
-
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import Home from "./components/Home";
 import SideBarLeft from "./components/SideBars/SideBarLeft";
 import SideBarRight from "./components/SideBars/SideBarRight";
-import Searched from "./components/Searched";
-// import SettingsMenu from "./components/SettingsMenu";
+import SettingsMenu from './components/SettingsMenu';
 
 function App() {
   const [content, setContent] = useState("");
@@ -14,6 +12,7 @@ function App() {
 
   const handleSearch = (results) => {
     setSearchResults(results);
+    setContent("searched"); // Update content to indicate search results are being displayed
   };
 
   const handleFilterOption = (option) => {
@@ -27,12 +26,14 @@ function App() {
       setContent("onSettingsClick");
     } else if (action === "home") {
       // Check if the current content is already "home", if so, refresh the page
-      if (content === "") {
+      if (content === "" || content === "onSettingsClick") {
         // The user is already on the home page, so refresh
-        window.location.reload();
+        setContent("");
+        setSearchResults([]); // Clear search results
+        setFilterOption(null); // Clear filter options
       } else {
         // Default action (e.g., go back to home)
-        setContent("");
+        setContent("home");
       }
     } else {
       // Default action (e.g., go back to home)
@@ -40,7 +41,6 @@ function App() {
     }
   };
 
-  // Render content based on the value of the 'content' state
   let renderedContent;
   if (content === "searched") {
     renderedContent = (
@@ -49,11 +49,13 @@ function App() {
         onSettingsClick={() => handleClick("onSettingsClick")}
         onSearch={handleSearch}
         filterOption={filterOption}
+        searchResults={searchResults} // Pass the search results to the Home component
       />
     );
   } else if (content === "onSettingsClick") {
-    renderedContent = <Home />;
+    renderedContent = <SettingsMenu />;
   } else {
+    // Default to rendering the Home component without search results
     renderedContent = (
       <Home
         onSearchBarClick={() => handleClick("onSearchBarClick")}
@@ -67,9 +69,11 @@ function App() {
   return (
     <>
       <div className="main">
-        <SideBarLeft onIconClick={() => handleClick("home")} />
+        <SideBarLeft onHomeIconClick={() => handleClick("home")}
+      onSettingsIconClick={() => handleClick("onSettingsClick")} />
         {renderedContent}
-        <SideBarRight onIconClick={() => handleClick("onSettingsClick")} />
+        <SideBarRight onProfileIconClick={() => handleClick("profile")} />
+        
       </div>
       <div className="medc-container">
         <p id="options">MEDICARE</p>
