@@ -4,7 +4,8 @@ import "./App.css";
 import Home from "./components/Home";
 import SideBarLeft from "./components/SideBars/SideBarLeft";
 import SideBarRight from "./components/SideBars/SideBarRight";
-import Settings from "./components/Settings";
+import Searched from "./components/Searched";
+// import SettingsMenu from "./components/SettingsMenu";
 
 function App() {
   const [content, setContent] = useState("");
@@ -51,7 +52,7 @@ function App() {
       />
     );
   } else if (content === "onSettingsClick") {
-    renderedContent = <Settings />;
+    renderedContent = <Home />;
   } else {
     renderedContent = (
       <Home

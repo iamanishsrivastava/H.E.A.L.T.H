@@ -130,28 +130,11 @@ const Home = () => {
           <input
             type="text"
             className="search-input"
-            placeholder="Type here to search"
-            value={inputValue}
-            onChange={handleChange}
-            onFocus={handleFocus} // Call handleFocus when input is focused
+            placeholder="type here to search"
+            onClick={onSearchBarClick}
           />
-          {inputValue && (
-            <i
-              className="bi bi-x clear-icon"
-              aria-hidden="true"
-              onClick={handleClear}
-            ></i>
-          )}
-          {showSearchBar && (
-            <i
-              className="bi bi-filter filter-icon"
-              aria-hidden="true"
-              onClick={() => {
-                setShowFilterMenu(!showFilterMenu);
-                setShowSortMenu(false); // Close the sorting options menu when opening the filter menu
-              }}
-            ></i>
-          )}
+          <i className="bi bi-filter filter-icon" aria-hidden="true"></i>
+          <i className="bi bi-x clear-icon" aria-hidden="true"></i>
         </div>
 
         {showSearchBar && inputValue && (
