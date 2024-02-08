@@ -1,5 +1,4 @@
-import './Home.css';
-
+import "./Home.css";
 
 function Home({ onSearchBarClick }) {
   return (
@@ -11,19 +10,16 @@ function Home({ onSearchBarClick }) {
           medicines/symptoms?
         </div>
         <div className="search-bar">
-        <div className="iconContainer">
-          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
-        </div>
           <input
             type="text"
             className="search-input"
             placeholder="type here to search"
             onClick={onSearchBarClick}
           />
+          <i class="bi bi-filter filter-icon" aria-hidden="true"></i>
+          <i class="bi bi-x clear-icon" aria-hidden="true"></i>
         </div>
-
       </div>
-
     </div>
   );
 }

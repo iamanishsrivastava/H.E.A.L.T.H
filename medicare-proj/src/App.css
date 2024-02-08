@@ -3,4 +3,27 @@
   align-items: center;
   justify-content: center;
   background-color: #7B6767;
+  /* height: 90vh; */
+  padding-top: 1vh;
+}
+
+.medc-container {
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  margin-top: auto; 
+  height: 4vh;
+  width: 100%;
+  margin-bottom: auto;
+  text-align: center;
+  background-color: #7B6767;
+}
+
+#options {
+  margin: auto;
+  height: auto;
+  color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px 3.75q rgba(0,0,0,0.5);
 }
