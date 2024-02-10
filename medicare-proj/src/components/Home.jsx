@@ -1,6 +1,36 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Home.css";
 
+const database = [
+  { name: "Paracetamol", category: "Medicine" },
+  { name: "Ibuprofen", category: "Medicine" },
+  { name: "Aspirin", category: "Medicine" },
+  { name: "Headache", category: "Symptom" },
+  { name: "Fever", category: "Symptom" },
+  { name: "Cough", category: "Symptom" },
+];
+
+// Define the quickSort function
+const quickSort = (arr) => {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivot = arr[Math.floor(arr.length / 2)];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name < pivot.name) {
+      left.push(arr[i]);
+    } else if (arr[i].name > pivot.name) {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
+
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -18,11 +48,16 @@ const Home = () => {
       filterMenuRef.current &&
       !filterMenuRef.current.contains(event.target) &&
       !event.target.classList.contains("filter-icon")
+      !filterMenuRef.current.contains(event.target) &&
+      !event.target.classList.contains("filter-icon")
     ) {
-      // setShowFilterMenu(false);
+      setShowFilterMenu(false);
       setShowSortMenu(false);
     }
-  };
+  
+    // Close the sort menu when a click occurs outside of it
+    setShowSortMenu(false);
+  };  
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -89,6 +124,19 @@ const Home = () => {
     handleFilterOption(option);
   };
 
+  const renderSortOption = (iconClass, text, option) => (
+    <div
+      key={option}
+      className="sort-menu-item"
+      onClick={() => handleSortOption(option)}
+      onMouseOver={() => setSortText(text)}
+      onMouseLeave={() => setSortText("")}
+    >
+      <i className={`bi ${iconClass}`}></i>{" "}
+      {sortText}
+    </div>
+  );
+
   const renderSortOptions = () => (
     <div className="sort-menu">
       {renderSortOption(
@@ -134,7 +182,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home">
+    <div className={`home ${showFilterMenu ? 'filter-menu-visible' : ''}`}>
       <div
         className={`search-container gap-1 ${showSearchBar ? "focused" : ""}`}
       >
@@ -175,7 +223,7 @@ const Home = () => {
               className="bi bi-filter filter-icon"
               aria-hidden="true"
               onClick={() => {
-                setShowFilterMenu(!showFilterMenu);
+                setShowFilterMenu(prevState => !prevState);
                 setShowSortMenu(false);
               }}
             ></i>
@@ -183,7 +231,7 @@ const Home = () => {
         </div>
 
         {showFilterMenu && (
-          <div className="filter-menu" ref={filterMenuRef}>
+          <div className={`filter-menu ${showFilterMenu ? 'visible' : ''}`} ref={filterMenuRef}>
             {renderSortOptions()}
             <div className="filtersort-separator-line"></div>
             <div id="filter-menu-item" onClick={() => handleFilterOption(null)}>
@@ -208,6 +256,17 @@ const Home = () => {
         {console.log("Input value:", inputValue)}
         {console.log("Medicine data:", medicineData)}
         {showSearchBar && inputValue && (
+        <div className={`suggest-item-list-container ${showFilterMenu ? 'visible' : ''}`}>
+          <div className="suggest-item-list">
+            {filteredAndSortedDatabase.map((item, index) => (
+              <div className="suggest-item" key={index}>
+                {item.name}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
           <div className="suggest-item-list-container">
             <div className="suggest-item-list">
               {medicineData.length === 0 ||
