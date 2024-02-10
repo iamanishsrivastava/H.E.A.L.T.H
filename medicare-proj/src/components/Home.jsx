@@ -1,15 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Home.css";
 
-const database = [
-  { name: "Paracetamol", category: "Medicine" },
-  { name: "Ibuprofen", category: "Medicine" },
-  { name: "Aspirin", category: "Medicine" },
-  { name: "Headache", category: "Symptom" },
-  { name: "Fever", category: "Symptom" },
-  { name: "Cough", category: "Symptom" },
-];
-
 // Define the quickSort function
 const quickSort = (arr) => {
   if (arr.length <= 1) {
@@ -48,10 +39,8 @@ const Home = () => {
       filterMenuRef.current &&
       !filterMenuRef.current.contains(event.target) &&
       !event.target.classList.contains("filter-icon")
-      !filterMenuRef.current.contains(event.target) &&
-      !event.target.classList.contains("filter-icon")
     ) {
-      setShowFilterMenu(false);
+      // setShowFilterMenu(false);
       setShowSortMenu(false);
     }
   
@@ -133,7 +122,7 @@ const Home = () => {
       onMouseLeave={() => setSortText("")}
     >
       <i className={`bi ${iconClass}`}></i>{" "}
-      {sortText}
+      {/* {sortText} */}
     </div>
   );
 
@@ -165,21 +154,6 @@ const Home = () => {
       )}
     </div>
   );
-
-  const renderSortOption = (iconClass, text, option, handleSortOption) => {
-    return (
-      <div
-        key={option}
-        className="sort-menu-item"
-        onMouseOver={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => handleSortOption(option)} // Call handleSortOption with the selected option
-      >
-        {iconClass && <i className={`bi ${iconClass}`}></i>}
-        {/* {isHovered && <div className="hovered-text">{text}</div>} */}
-      </div>
-    );
-  };
 
   return (
     <div className={`home ${showFilterMenu ? 'filter-menu-visible' : ''}`}>
@@ -256,17 +230,6 @@ const Home = () => {
         {console.log("Input value:", inputValue)}
         {console.log("Medicine data:", medicineData)}
         {showSearchBar && inputValue && (
-        <div className={`suggest-item-list-container ${showFilterMenu ? 'visible' : ''}`}>
-          <div className="suggest-item-list">
-            {filteredAndSortedDatabase.map((item, index) => (
-              <div className="suggest-item" key={index}>
-                {item.name}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
           <div className="suggest-item-list-container">
             <div className="suggest-item-list">
               {medicineData.length === 0 ||
