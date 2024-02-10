@@ -10,6 +10,27 @@ const database = [
   { name: "Cough", category: "Symptom" },
 ];
 
+// Define the quickSort function
+const quickSort = (arr) => {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivot = arr[Math.floor(arr.length / 2)];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].name < pivot.name) {
+      left.push(arr[i]);
+    } else if (arr[i].name > pivot.name) {
+      right.push(arr[i]);
+    }
+  }
+
+  return [...quickSort(left), pivot, ...quickSort(right)];
+};
+
 const Home = () => {
   const [inputValue, setInputValue] = useState("");
   const [showSearchBar, setShowSearchBar] = useState(false);
@@ -17,18 +38,22 @@ const Home = () => {
   const [filterOption, setFilterOption] = useState(null);
   const [showSortMenu, setShowSortMenu] = useState(false);
   const [sortText, setSortText] = useState(""); // State for displaying text on sort icon hover
+  const [filteredAndSortedDatabase, setFilteredAndSortedDatabase] = useState([]);
 
   const filterMenuRef = useRef(null);
 
   const handleClickOutside = (event) => {
     if (
       filterMenuRef.current &&
-      !filterMenuRef.current.contains(event.target)
+      !filterMenuRef.current.contains(event.target) &&
+      !event.target.classList.contains("filter-icon")
     ) {
       setShowFilterMenu(false);
-      setShowSortMenu(false);
     }
-  };
+  
+    // Close the sort menu when a click occurs outside of it
+    setShowSortMenu(false);
+  };  
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -36,6 +61,27 @@ const Home = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    // Apply search filter to the unsorted database
+    const filteredDatabase = database.filter((item) =>
+      item.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
+
+    // Apply sorting logic if a filter option is selected
+    let sortedDatabase = [...filteredDatabase];
+    if (filterOption === "Ascending") {
+      sortedDatabase = quickSort(sortedDatabase);
+    } else if (filterOption === "Descending") {
+      sortedDatabase = quickSort(sortedDatabase).reverse();
+    } else if (filterOption === "Popularity") {
+      // Implement your custom sorting logic here
+    } else if (filterOption === "Relevance") {
+      // Implement your custom sorting logic here
+    }
+
+    setFilteredAndSortedDatabase(sortedDatabase);
+  }, [inputValue, filterOption]);
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -55,48 +101,33 @@ const Home = () => {
   };
 
   const handleFilterOption = (option) => {
-    if (option === "Ascending") {
-      database.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (option === "Descending") {
-      database.sort((a, b) => b.name.localeCompare(a.name));
-    } else if (option === "Popularity") {
-      // Implement your custom sorting logic here
-    } else if (option === "Relevance") {
-      // Implement your custom sorting logic here
-    } else {
-      setFilterOption(option);
-    }
-    setShowFilterMenu(false);
-  };
-
-  const handleSortOption = (option) => {
-    handleFilterOption(option);
+    setFilterOption(option);
   };
 
   const renderSortOption = (iconClass, text, option) => (
     <div
       key={option}
       className="sort-menu-item"
-      onClick={() => handleSortOption(option)}
+      onClick={() => handleFilterOption(option)}
       onMouseOver={() => setSortText(text)}
       onMouseLeave={() => setSortText("")}
     >
       <i className={`bi ${iconClass}`}></i>{" "}
-      {sortText}
+      {/* {sortText} */}
     </div>
   );
 
   const renderSortOptions = () => (
     <div className="sort-menu">
-      {renderSortOption("bi-sort-alpha-up", "Ascending (A-Z)", "Ascending")}
-      {renderSortOption("bi-sort-alpha-down", "Descending (Z-A)", "Descending")}
+      {renderSortOption("bi-sort-alpha-up", "Descending (Z-A)", "Descending")}
+      {renderSortOption("bi-sort-alpha-down", "Ascending (A-Z)", "Ascending")}
       {renderSortOption("bi-heart-fill", "Popularity", "Popularity")}
       {renderSortOption("bi-star-fill", "Relevance", "Relevance")}
     </div>
   );
   
   return (
-    <div className="home">
+    <div className={`home ${showFilterMenu ? 'filter-menu-visible' : ''}`}>
       <div
         className={`search-container gap-1 ${showSearchBar ? "focused" : ""}`}
       >
@@ -137,7 +168,7 @@ const Home = () => {
             className="bi bi-filter filter-icon"
               aria-hidden="true"
               onClick={() => {
-                setShowFilterMenu(!showFilterMenu);
+                setShowFilterMenu(prevState => !prevState);
                 setShowSortMenu(false);
               }}
             ></i>
@@ -145,8 +176,8 @@ const Home = () => {
         </div>
 
         {showFilterMenu && (
-          <div className="filter-menu" ref={filterMenuRef}>
-            {showSortMenu && renderSortOptions()}
+          <div className={`filter-menu ${showFilterMenu ? 'visible' : ''}`} ref={filterMenuRef}>
+            {renderSortOptions()}
             <div className="filtersort-separator-line"></div>
             <div id="filter-menu-item" onClick={() => handleFilterOption(null)}>
               All
@@ -169,23 +200,17 @@ const Home = () => {
         <div className="separator-line"></div>
 
         {showSearchBar && inputValue && (
-          <div className="suggest-item-list-container">
-            <div className="suggest-item-list">
-              {database
-                .filter((item) =>
-                  item.name.toLowerCase().includes(inputValue.toLowerCase())
-                )
-                .filter(
-                  (item) => !filterOption || item.category === filterOption
-                )
-                .map((item, index) => (
-                  <div className="suggest-item" key={index}>
-                    {item.name}
-                  </div>
-                ))}
-            </div>
+        <div className={`suggest-item-list-container ${showFilterMenu ? 'visible' : ''}`}>
+          <div className="suggest-item-list">
+            {filteredAndSortedDatabase.map((item, index) => (
+              <div className="suggest-item" key={index}>
+                {item.name}
+              </div>
+            ))}
           </div>
-        )}
+        </div>
+      )}
+
       </div>
     </div>
   );
