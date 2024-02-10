@@ -12,7 +12,6 @@ const SettingsMenu = () => {
                   <li>History</li>
                   <li>Privacy</li>
                   <li>Language</li>
-                  {/* <li></li> */}
                </ul>
             </div>
          </div>
