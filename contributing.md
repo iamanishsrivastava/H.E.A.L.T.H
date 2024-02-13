@@ -41,8 +41,7 @@ Please ensure that your pull request includes a clear description of the changes
 
 ## Community
 
-Join our community on [GitHub Discussions](discussions).
-Join our [Discord server](https://discord.gg/7TF9zaU97V) for project updates and announcements.
+Join our community on [Discord](https://discord.gg/7TF9zaU97V) for project updates, announcements and collaborations.
 
 ## License
 
