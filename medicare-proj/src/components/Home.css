@@ -36,14 +36,17 @@
   display: block;
   margin-top: 50px;
   justify-content: center;
-  background-color: #373737;
+  /* background-color: #373737; */
   height: 250px;
-  /* overflow: hidden; */
   transition: margin-top 0.3s ease; /* Transition for margin-top property */
 }
 
 .focused.search-container {
   margin-top: 20px; /* Adjusted margin when focused */
+}
+
+.selected.search-container {
+  margin-top: 50px;  
 }
 
 .search-bar {
@@ -53,6 +56,7 @@
   border: 1.25px solid white;
   border-radius: 10vh;
   background-color: #373737;
+  transition: transform 0.3s ease-in-out;
 }
 
 .search-input {

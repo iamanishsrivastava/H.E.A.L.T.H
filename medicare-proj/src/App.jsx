@@ -3,7 +3,6 @@ import "./App.css";
 import Home from "./components/Home";
 import SideBarLeft from "./components/SideBars/SideBarLeft";
 import SideBarRight from "./components/SideBars/SideBarRight";
-import SettingsMenu from './components/SettingsMenu';
 
 function App() {
   const [content, setContent] = useState("");
@@ -14,7 +13,7 @@ function App() {
     setSearchResults(results);
     setContent("searched"); // Update content to indicate search results are being displayed
   };
-
+  
   const handleFilterOption = (option) => {
     setFilterOption(option);
   };
@@ -53,13 +52,13 @@ function App() {
       />
     );
   } else if (content === "onSettingsClick") {
-    renderedContent = <SettingsMenu />;
+    // renderedContent = <SettingsMenu />;
   } else {
     // Default to rendering the Home component without search results
     renderedContent = (
       <Home
         onSearchBarClick={() => handleClick("onSearchBarClick")}
-        onSettingsClick={() => handleClick("onSettingsClick")}
+        onSettingsIconClick={() => handleClick("onSettingsClick")}
         onSearch={handleSearch}
         filterOption={filterOption}
       />

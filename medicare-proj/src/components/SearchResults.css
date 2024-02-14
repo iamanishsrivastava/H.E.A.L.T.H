@@ -1,0 +1,21 @@
+/* SearchResults.css */
+.search-results-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   gap: 20px;
+   padding: 20px;
+   height: 85vh;
+   width: 90vw;
+ }
+ 
+ .medicine-details {
+   border: 1px solid #ccc;
+   padding: 15px;
+   border-radius: 8px;
+   transition: transform 0.3s ease; /* Smooth transition for pop-up effect */
+ }
+ 
+ .medicine-details:hover {
+   /* transform: translateY(-5px); */
+ }
+ 
