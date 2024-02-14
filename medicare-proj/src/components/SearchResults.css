@@ -13,9 +13,9 @@
    padding: 15px;
    border-radius: 8px;
    transition: transform 0.3s ease; /* Smooth transition for pop-up effect */
+   
  }
  
  .medicine-details:hover {
    /* transform: translateY(-5px); */
  }
- 

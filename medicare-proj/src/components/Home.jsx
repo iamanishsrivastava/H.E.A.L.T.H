@@ -42,11 +42,42 @@ const Home = () => {
 
   const [selectedMedicine, setSelectedMedicine] = useState(null); // state for selected medicine
 
-  // Effect hook for fetching medicine data
   useEffect(() => {
-    fetchMedicineData();
-  }, []);
-
+    // Effect hook for fetching medicine data
+    const fetchMedicineData = async () => {
+      try {
+        const response = await fetch("http://localhost:5170/api/medicine");
+        if (!response.ok) {
+          throw new Error("Failed to fetch medicine data");
+        }
+        const data = await response.json();
+        setMedicineData(data);
+      } catch (error) {
+        console.error("Error fetching medicine data:", error);
+      }
+    };
+  
+    fetchMedicineData(); // Call the function immediately
+  
+    // Event listener for clicking outside search container when a medicine is selected
+    const handleClickOutside = (event) => {
+      const searchContainer = document.querySelector(".search-container");
+      if (searchContainer && !searchContainer.contains(event.target) && selectedMedicine) {
+        setShowSearchBar(false);
+      }
+    };
+  
+    // Add event listener when a medicine is selected
+    if (selectedMedicine) {
+      document.addEventListener("click", handleClickOutside);
+    }
+  
+    // Cleanup function to remove event listener when component unmounts or when medicine is deselected
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [selectedMedicine]); // Re-run effect when selectedMedicine changes
+  
   // Function to fetch medicine data
   const fetchMedicineData = async () => {
     try {
@@ -73,6 +104,20 @@ const Home = () => {
     const searchContainer = document.querySelector(".search-container");
     if (searchContainer) {
       searchContainer.classList.add("focused");
+      if (selectedMedicine) {
+        searchContainer.classList.add("selected");
+      }
+    }
+  };
+
+  const handleMedicineSelect = (medicine) => {
+    setSelectedMedicine(medicine);
+    setInputValue(medicine.name);
+    setShowSearchBar(false); // Hide search bar after selection
+    const searchContainer = document.querySelector(".search-container");
+    if (searchContainer) {
+      searchContainer.classList.remove("focused"); // Remove focus class
+      searchContainer.classList.add("selected"); // Add selected class
     }
   };
 
@@ -101,12 +146,6 @@ const Home = () => {
       return;
     }
     setMedicineData(sortedData);
-  };
-
-  const handleMedicineSelect = (medicine) => {
-    setSelectedMedicine(medicine);
-    setInputValue(medicine.name);
-    setShowSearchBar(false); // Hide search bar after selection
   };
 
   // Conditionally determine the class based on the presence of selectedMedicine
