@@ -46,9 +46,7 @@ const Home = () => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
-        const response = await fetch(
-          "https://medicare-5v9w.onrender.com/api/medicine"
-        );
+        const response = await fetch("http://localhost:5170/api/medicine");
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
         }
@@ -58,32 +56,28 @@ const Home = () => {
         console.error("Error fetching medicine data:", error);
       }
     };
-
+  
     fetchMedicineData(); // Call the function immediately
-
+  
     // Event listener for clicking outside search container when a medicine is selected
     const handleClickOutside = (event) => {
       const searchContainer = document.querySelector(".search-container");
-      if (
-        searchContainer &&
-        !searchContainer.contains(event.target) &&
-        selectedMedicine
-      ) {
+      if (searchContainer && !searchContainer.contains(event.target) && selectedMedicine) {
         setShowSearchBar(false);
       }
     };
-
+  
     // Add event listener when a medicine is selected
     if (selectedMedicine) {
       document.addEventListener("click", handleClickOutside);
     }
-
+  
     // Cleanup function to remove event listener when component unmounts or when medicine is deselected
     return () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [selectedMedicine]); // Re-run effect when selectedMedicine changes
-
+  
   // Function to fetch medicine data
   const fetchMedicineData = async () => {
     try {
