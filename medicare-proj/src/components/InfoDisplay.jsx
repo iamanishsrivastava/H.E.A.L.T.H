@@ -1,5 +1,4 @@
 import React from "react";
-import SearchResults from "./SearchResults";
 
 const InfoDisplay = ({ showSearchBar, showSearchResults }) => {
   return (

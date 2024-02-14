@@ -12,22 +12,26 @@ const SearchResults = ({ selectedMedicine }) => {
   return (
     <div className="search-results-container">
       {/* Grid layout to display medicine details */}
+      <div className="left-section-container">
+        <p className='title'>Left section</p>
+        <p className='content'>content</p>
+      </div>
       <div className="medicine-details">
         {/* Display name, symptoms, usage, advice */}
-        <div className="medicine-detail">
-          <label>Name:</label>
+        <div className="medicine-detail name">
+          <label className='name-label label'>Name</label>
           <span>{selectedMedicine.name}</span>
         </div>
-        <div className="medicine-detail">
-          <label>Symptoms:</label>
+        <div className="medicine-detail symptoms">
+          <label className='symptoms-label label'>Symptoms</label>
           <span>{selectedMedicine.symptoms}</span>
         </div>
-        <div className="medicine-detail">
-          <label>Usage:</label>
+        <div className="medicine-detail usage">
+          <label className='usage-label label'>Usage</label>
           <span>{selectedMedicine.usage}</span>
         </div>
-        <div className="medicine-detail">
-          <label>Advice:</label>
+        <div className="medicine-detail advice">
+          <label className='advice-label label'>Advice</label>
           <span>{selectedMedicine.advice}</span>
         </div>
         {/* Add more fields for future additions */}

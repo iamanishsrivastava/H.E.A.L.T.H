@@ -1,21 +1,73 @@
 /* SearchResults.css */
 .search-results-container {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-   gap: 20px;
-   padding: 20px;
-   height: 85vh;
-   width: 90vw;
- }
- 
- .medicine-details {
-   border: 1px solid #ccc;
-   padding: 15px;
-   border-radius: 8px;
-   transition: transform 0.3s ease; /* Smooth transition for pop-up effect */
-   
- }
- 
- .medicine-details:hover {
-   /* transform: translateY(-5px); */
- }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  /* grid-template-rows: repeat(auto-fit, minmax(200px, 1fr)); */
+  /* gap: 20px; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 12vh;
+  height: 78vh;
+  width: 90vw;
+}
+
+.left-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: end;
+  height: 45%;
+  width: 60%;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.content {
+  display: flex;
+  align-items: end;
+  height: 10%;
+  width: 60%;
+  font-size: 12px;
+  width:  ;
+}
+
+.medicine-details {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-gap: 2%;
+  padding: 5px;
+  transition: transform 0.3s ease;
+  /* Smooth transition for pop-up effect */
+
+}
+
+
+span {
+  height: 95%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.medicine-detail {
+  padding: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid ;
+  border-radius: 1vh;
+}
+
+.label {
+  justify-content: right;
+  width: 95%;
+  display: flex;
+}
+
+.medicine-details:hover {
+  /* transform: translateY(-5px); */
+}

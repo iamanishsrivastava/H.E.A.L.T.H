@@ -38,7 +38,7 @@
   justify-content: center;
   /* background-color: #373737; */
   height: 250px;
-  transition: margin-top 0.3s ease, height 0.1s ease-in-out; /* Transition for margin-top property */
+  transition: margin-top 0.15s ease; /* Transition for margin-top property */
 }
 
 .focused.search-container {
@@ -46,8 +46,11 @@
 }
 
 .selected.search-container {
-  /* margin-top: 50px; */
-  height: 100vh;
+  scale: 1.2;
+  height: 100px;
+  margin-top: -85vh;
+  transition: scale 0.2s ease;
+  /* height: 100vh; */
 }
 
 .search-bar {
@@ -88,7 +91,7 @@
   flex-direction: row;
   align-items: center;
   padding: 3%;
-  background-color: rgba(123, 103, 103, 40%);
+  background-color: rgb(123, 103, 103);
   border-radius: 15px 15px 0% 0%;
   opacity: 1;
   justify-content: space-evenly;
@@ -121,12 +124,12 @@
 
 .suggest-item-list-container {
   position: relative;
-  background-color: rgba(123, 103, 103, 40%);
+  background-color: rgb(123, 103, 103);
   justify-content: space-evenly;
   text-align: left;
   max-height: max-content;
   min-height: 0%;
-  border-radius: 15px 15px 15px 15px;
+  border-radius: 0 0 15px 15px;
   box-shadow: 1px 1px 6px rgba(31, 30, 30, 40%);
 }
 
@@ -147,15 +150,6 @@
   margin-top: 0px; /* Adjust margin-top to create separation */
   position: relative; /* Add position:relative to ensure proper rendering */
   /* Adjust margin-top to create separation */
-}
-
-.suggest-item-list-container {
-  position: relative;
-  background-color: rgba(123, 103, 103, 40%);
-  max-height: max-content;
-  min-height: 0%;
-  border-radius: 0% 0% 15px 15px;
-  box-shadow: 1px 1px 6px rgba(31, 30, 30, 40%);
 }
 
 .suggest-item-list {
