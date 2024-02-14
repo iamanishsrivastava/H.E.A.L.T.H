@@ -18,7 +18,7 @@ const SearchSuggestions = ({ medicineData, inputValue, filterOption, handleMedic
                 .includes(inputValue.toLowerCase()))
         ).length === 0 ? (
           <div className="no-info">
-            <span>No info available.</span>
+            No info available.
           </div>
         ) : (
           // Display search results
@@ -40,7 +40,8 @@ const SearchSuggestions = ({ medicineData, inputValue, filterOption, handleMedic
             .map((item, index) => (
               <div className="suggest-item-container" key={index}>
                 <div className="suggest-item" onClick={() => handleMedicineSelect(item)}>{item.name}</div>
-                <div className="suggest-item">{item.symptoms}</div>
+                {/* <div className="suggest-item">{item.symptoms}</div> */}
+                {/* change .suggest-item width to 50% */}
               </div>
             ))
         )}

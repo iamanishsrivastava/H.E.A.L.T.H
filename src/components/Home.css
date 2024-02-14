@@ -165,7 +165,7 @@
 .suggest-item {
   display: flex;
   height: 35px;
-  width: 50%;
+  width: 100%;
   justify-content: center;
   align-items: center;
   cursor: pointer;
