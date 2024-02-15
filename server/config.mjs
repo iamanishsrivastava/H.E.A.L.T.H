@@ -1,5 +1,5 @@
 // config.js
-export const username = process.env.db_username;
-export const password = process.env.db_pass;
-export const clusterUrl = process.env.clusterUrl;
-export const databaseName = process.env.db_name;
+export const username = "teammedicareweb";
+export const password = "3peace70out32";
+export const clusterUrl = "clustermedicare.01dvrqm.mongodb.net";
+export const databaseName = "MediCare";
