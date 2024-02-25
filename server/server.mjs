@@ -6,7 +6,7 @@ import { username, password, clusterUrl, databaseName } from "./config.mjs";
 import cors from 'cors';
 import path from 'path'; // Import path module
 
-const __dirname = path.dirname(new URL(import.meta.url).pathname); // Get current directory
+const __dirname = path.resolve(); // Get current directory
 
 const app = express();
 const port = 10000; // Use port 10000 as per Render's requirements
@@ -37,8 +37,10 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve the index.html file from the root folder
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 // API endpoint to fetch medicine data
 app.get("/api/medicine", async (req, res) => {
@@ -51,11 +53,6 @@ app.get("/api/medicine", async (req, res) => {
     console.error("Error fetching medicine data:", err);
     res.status(500).json({ error: "Internal server error" });
   }
-});
-
-// Serve the index.html file for all other routes (catch-all route)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start server
