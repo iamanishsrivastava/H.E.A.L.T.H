@@ -4,7 +4,9 @@ import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import { username, password, clusterUrl, databaseName } from "./config.mjs";
 import cors from 'cors';
-import path from 'path';
+import path from 'path'; // Import path module
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname); // Get current directory
 
 const app = express();
 const port = 10000; // Use port 10000 as per Render's requirements
