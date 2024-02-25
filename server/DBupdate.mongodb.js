@@ -13,12 +13,12 @@
 use("MediCare");
 
 // Insert a few documents into the sales collection.
-db.getCollection("medicine").insertMany([
+db.getCollection("medicine").insertOne([
   {
-    name: "Losartan",
-    symptoms: "High Blood Pressure",
-    usage: "Lowers blood pressure",
-    advice: "Avoid potassium supplements and high-potassium foods",
+    name: "Digene",
+    symptoms: "Bloating, Excessive gas",
+    usage: "Reduces acidity of stomach",
+    advice: "No medical expert advice available at the moment",
   },
 ]);
 

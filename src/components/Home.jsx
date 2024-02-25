@@ -46,7 +46,7 @@ const Home = () => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
-        const response = await fetch("http://medicare-5v9w.onrender.com:5170/api/medicine");
+        const response = await fetch("https://medicare-5v9w.onrender.com:5170/server/api/medicine");
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
         }
@@ -77,20 +77,6 @@ const Home = () => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [selectedMedicine]); // Re-run effect when selectedMedicine changes
-  
-  // Function to fetch medicine data
-  const fetchMedicineData = async () => {
-    try {
-      const response = await fetch("http://localhost:5170/api/medicine");
-      if (!response.ok) {
-        throw new Error("Failed to fetch medicine data");
-      }
-      const data = await response.json();
-      setMedicineData(data);
-    } catch (error) {
-      console.error("Error fetching medicine data:", error);
-    }
-  };
 
   // Event handler for input change
   const handleChange = (event) => {

@@ -4,9 +4,10 @@ import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import { username, password, clusterUrl, databaseName } from "./config.mjs";
 import cors from 'cors';
+import path from 'path';
 
 const app = express();
-const port = 5170;
+const port = 10000; // Use port 10000 as per Render's requirements
 
 // Allow requests from all origins
 app.use(cors());
@@ -34,6 +35,9 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 // API endpoint to fetch medicine data
 app.get("/api/medicine", async (req, res) => {
   try {
@@ -47,7 +51,12 @@ app.get("/api/medicine", async (req, res) => {
   }
 });
 
+// Serve the index.html file for all other routes (catch-all route)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // Start server
-app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server listening at http://0.0.0.0:${port}`);
 });
