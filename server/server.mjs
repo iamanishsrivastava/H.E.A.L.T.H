@@ -37,13 +37,20 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-// Serve static files from the 'dist' directory
-app.use(express.static(path.join(__dirname, 'dist')));
-
-// Serve the index.html file from the root folder
+// Serve the index.html file from the 'dist' folder
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.set('Content-Type', 'text/html'); // Set the correct MIME type
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
+
+// Serve JavaScript files with the correct MIME type
+app.get('*.js', (req, res, next) => {
+  res.set('Content-Type', 'application/javascript');
+  next();
+});
+
+// Serve the React client-side application
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // API endpoint to fetch medicine data
 app.get("/api/medicine", async (req, res) => {
