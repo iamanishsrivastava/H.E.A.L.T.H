@@ -46,7 +46,7 @@ const Home = () => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
-        const response = await fetch("/api/medicine");
+        const response = await fetch("http://0.0.0.0:10000/api/medicine");
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
         }
@@ -55,7 +55,7 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching medicine data:", error);
       }
-    };
+    };    
   
     fetchMedicineData(); // Call the function immediately
   
