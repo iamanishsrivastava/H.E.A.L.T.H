@@ -46,7 +46,7 @@ const Home = () => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
-        const response = await fetch("http://0.0.0.0:10000/api/medicine");
+        const response = await fetch("/api/medicine");
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
         }
@@ -55,23 +55,27 @@ const Home = () => {
       } catch (error) {
         console.error("Error fetching medicine data:", error);
       }
-    };    
-  
+    };
+
     fetchMedicineData(); // Call the function immediately
-  
+
     // Event listener for clicking outside search container when a medicine is selected
     const handleClickOutside = (event) => {
       const searchContainer = document.querySelector(".search-container");
-      if (searchContainer && !searchContainer.contains(event.target) && selectedMedicine) {
+      if (
+        searchContainer &&
+        !searchContainer.contains(event.target) &&
+        selectedMedicine
+      ) {
         setShowSearchBar(false);
       }
     };
-  
+
     // Add event listener when a medicine is selected
     if (selectedMedicine) {
       document.addEventListener("click", handleClickOutside);
     }
-  
+
     // Cleanup function to remove event listener when component unmounts or when medicine is deselected
     return () => {
       document.removeEventListener("click", handleClickOutside);

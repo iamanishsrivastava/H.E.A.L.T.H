@@ -9,7 +9,6 @@ import path from 'path'; // Import path module
 const __dirname = path.resolve(); // Get current directory
 
 const app = express();
-const port = 10000; // Use port 10000 as per Render's requirements
 
 // Allow requests from all origins
 app.use(cors());
@@ -66,6 +65,4 @@ app.get("/api/medicine", async (req, res) => {
 });
 
 // Start server
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Server listening at http://0.0.0.0:${port}`);
-});
+export default app; // Export the app for Vercel
