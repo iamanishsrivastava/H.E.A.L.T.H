@@ -11,7 +11,13 @@ const __dirname = path.resolve(); // Get current directory
 const app = express();
 
 // Allow requests from all origins
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://medicare-anishamsri.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 
 // MongoDB connection URI
 const uri = `mongodb+srv://${username}:${password}@${clusterUrl}/${databaseName}?retryWrites=true&w=majority`;
