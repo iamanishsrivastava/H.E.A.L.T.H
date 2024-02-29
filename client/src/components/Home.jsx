@@ -46,7 +46,9 @@ const Home = () => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
-        const response = await fetch("/api/medicine");
+        const response = await fetch(
+          "https://medicare-server-anishamsri.vercel.app/api/medicine"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
         }
@@ -57,7 +59,7 @@ const Home = () => {
       }
     };
 
-    fetchMedicineData(); // Call the function immediately
+    fetchMedicineData();
 
     // Event listener for clicking outside search container when a medicine is selected
     const handleClickOutside = (event) => {
