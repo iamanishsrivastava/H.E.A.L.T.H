@@ -47,7 +47,7 @@ const Home = () => {
     const fetchMedicineData = async () => {
       try {
         const response = await fetch(
-          "https://medicare-server-anishamsri.vercel.app/api/medicine"
+          "/api/medicine"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
