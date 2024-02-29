@@ -1,7 +1,10 @@
 {
   "version": 2,
+  "builds": [
+    { "src": "server.mjs", "use": "@vercel/node" }
+  ],
   "routes": [
     { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/api/medicine", "dest": "server.mjs" }
   ]
 }
