@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "server/server.mjs", "use": "@vercel/node" },
+    { "src": "client/package.json", "use": "@vercel/static-build" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/api/.*", "dest": "server/server.mjs" },
+    { "src": "/(.*)", "dest": "client/$1" }
+  ]
+}
