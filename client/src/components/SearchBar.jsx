@@ -7,13 +7,14 @@ const SearchBar = ({
   handleFocus,
   handleClear,
   setShowFilterMenu,
-  showSearchBar
+  showSearchBar,
 }) => {
   return (
     <>
       <div className="search-bar">
         <input
           type="text"
+          name="search-bar"
           className="search-input"
           placeholder="Type here to search"
           value={inputValue}
