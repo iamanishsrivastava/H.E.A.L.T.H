@@ -13,7 +13,7 @@ const app = express();
 // Allow requests from all origins
 app.use(
   cors({
-    origin: ["https://medicare-server-anishamsri.vercel.app"],
+    origin: "*",
     methods: ["POST", "GET"],
     credentials: true,
   })
