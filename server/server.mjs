@@ -3,21 +3,21 @@
 import express from "express";
 import { MongoClient, ServerApiVersion } from "mongodb";
 import { username, password, clusterUrl, databaseName } from "./config.mjs";
-import cors from 'cors';
-import path from 'path'; // Import path module
+import cors from "cors";
+import path from "path"; // Import path module
 
 const __dirname = path.resolve(); // Get current directory
 
 const app = express();
 
 // Allow requests from all origins
-app.use(cors(
-  {
-    origin: ["https://medicare-anishamsri.vercel.app"],
+app.use(
+  cors({
+    origin: ["https://medicare-server-anishamsri.vercel.app"],
     methods: ["POST", "GET"],
-    credentials: true
-  }
-));
+    credentials: true,
+  })
+);
 
 // MongoDB connection URI
 const uri = `mongodb+srv://${username}:${password}@${clusterUrl}/${databaseName}?retryWrites=true&w=majority`;
@@ -43,19 +43,19 @@ async function connectToDatabase() {
 connectToDatabase();
 
 // Serve the index.html file from the 'dist' folder
-app.get('/', (req, res) => {
-  res.set('Content-Type', 'text/html'); // Set the correct MIME type
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+app.get("/", (req, res) => {
+  res.set("Content-Type", "text/html"); // Set the correct MIME type
+  res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
 // Serve JavaScript files with the correct MIME type
-app.get('*.js', (req, res, next) => {
-  res.set('Content-Type', 'application/javascript');
+app.get("*.js", (req, res, next) => {
+  res.set("Content-Type", "application/javascript");
   next();
 });
 
 // Serve the React client-side application
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, "dist")));
 
 // API endpoint to fetch medicine data
 app.get("/api/medicine", async (req, res) => {
