@@ -34,6 +34,15 @@ const SearchResults = ({ selectedMedicine }) => {
           <label className='advice-label label'>Advice</label>
           <span>{selectedMedicine.advice}</span>
         </div>
+        <div className="medicine-detail scientific-name">
+          <label className="scientific-name-label label">Scientific Name</label>
+          <span>$ScientificName</span>
+        </div>
+        <div className="medicine-detail buy-link">
+          <label className="buy-link-label label">Buy Link</label>
+          <span>$BuyLink</span>
+        </div>
+
         {/* Add more fields for future additions */}
       </div>
     </div>

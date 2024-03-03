@@ -9,10 +9,10 @@
   height: 35vh;
   max-width: 500px;
   padding: 25px;
-  color: white;
+  color: black;
   border-radius: 2vh;
-  background-color: rgb(63, 63, 63);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #e5e5e5;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 1;
 }
 
@@ -50,7 +50,7 @@
   cursor: pointer;
   flex-direction: column;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 16%);
+  background-color: #FFFFFF;
 }
 
 #dark-mode-text,
@@ -109,11 +109,11 @@ p {
     width: 20vw;
     height: 35vh;
   }
-  
+
   .text {
     font-size: 20px;
   }
-  
+
   .icon {
     font-size: 20px;
   }

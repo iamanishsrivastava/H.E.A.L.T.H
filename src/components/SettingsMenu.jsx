@@ -10,6 +10,7 @@ function SettingsMenu({ onClose }) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         onClose();
         setIsVisible(false); // Close the menu when clicking outside
+        console.log("default");
       }
     };
 

@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #7B6767;
+  background-color: #E5E5E5;
   /* height: 90vh; */
   padding-top: 1vh;
 
@@ -19,15 +19,15 @@
   width: 100%;
   margin-bottom: auto;
   text-align: center;
-  background-color: #7B6767;
+  background-color: #E5E5E5;
 }
 
 #footer {
   margin: auto;
   height: auto;
-  color: white;
-  font-weight: 700;
-  text-shadow: 1px 1px 3.75q rgba(0,0,0,0.5);
+  color: rgb(41, 41, 41);
+  font-weight: 1000;
+  text-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 @media only screen and (max-width: 768px) {
