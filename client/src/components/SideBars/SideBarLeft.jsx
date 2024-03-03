@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import "./SideBarLeft.css";
 import SettingsMenu from "../SettingsMenu"; // Import the SettingsMenu component
 import { IoClose } from "react-icons/io5";
+
+// Handle behavior of Settings icon
 function SideBarLeft({ onSettingsIconClick, onHomeIconClick }) {
   const [showSettingsMenu, setShowSettingsMenu] = useState(false);
 
   const handleSettingsIconClick = () => {
-    // console.log("clicked")
-    setShowSettingsMenu(!showSettingsMenu);
+    console.log("handle settings icon click");
+    setShowSettingsMenu(true);
   };
 
   return (
@@ -22,13 +24,8 @@ function SideBarLeft({ onSettingsIconClick, onHomeIconClick }) {
 
     
       <div onClick={handleSettingsIconClick}>
-
-     
         {
-          showSettingsMenu ?  <IoClose color="white" size={32} /> :   <i
-         
-          className={`bi ${showSettingsMenu ? "bi-gear-fill" : "bi-gear"} settings-icon`}
-        ></i>
+          showSettingsMenu ?  <i className="bi bi-gear-fill settings-icon"></i> :  <i className="bi bi-gear settings-icon"></i>
         }
       </div>
     
@@ -36,7 +33,7 @@ function SideBarLeft({ onSettingsIconClick, onHomeIconClick }) {
 
       {/* Conditionally render SettingsMenu based on showSettingsMenu state */}
       {showSettingsMenu && (
-        <SettingsMenu onClose={() => setShowSettingsMenu(false)} />
+        <SettingsMenu onClose={handleSettingsIconClick}/>
       )}
     </div>
   );

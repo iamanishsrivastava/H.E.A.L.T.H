@@ -1,9 +1,5 @@
-.house-icon-container {
-  margin-top: 2vh;
-}
-
 .house-icon {
-  color: white;
+  color: #FF3F00;
   font-size: 24px;
   -webkit-text-stroke-width: 0.5px;
   cursor: pointer;
@@ -17,7 +13,7 @@
 }
 
 .settings-icon {
-  color: white;
+  color: #14213D;
   font-size: 24px;
   -webkit-text-stroke-width: 0.5px;
   cursor: pointer;
@@ -29,4 +25,18 @@
   height: 95vh;
   width: 70px;
   align-items: center;
+  padding-top: 2vh;
+}
+
+@media only screen and (max-width: 768px) {
+ 
+  .house-icon-container {
+    margin-top: 0%;
+  }
+  .sidebar-left {
+    padding: 2vh 0;
+  height: 100vh;
+  background-color: #373737;
+  
+ }
 }

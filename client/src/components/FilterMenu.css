@@ -1,0 +1,36 @@
+/* filter icon in search bar */
+.filter-icon {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  opacity: 1;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.filter-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 15px 15px 0% 0%;
+  opacity: 1;
+  justify-content: space-evenly;
+  margin-top: 8px;
+  z-index: 1;
+}
+
+.filter-menu-item {
+  cursor: pointer;
+}
+
+.filtersort-separator-line {
+  width: 1px;
+  height: 20px;
+  position: relative;
+  background-color: rgba(242, 242, 242, 40%);
+  z-index: 1;
+}

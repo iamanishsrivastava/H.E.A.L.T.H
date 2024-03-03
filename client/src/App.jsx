@@ -74,8 +74,8 @@ function App() {
         <SideBarRight onProfileIconClick={() => handleClick("profile")} />
         
       </div>
-      <div className="medc-container">
-        <p id="options">MEDICARE</p>
+      <div className="footer-container">
+        <p id="footer">MEDICARE</p>
       </div>
     </>
   );

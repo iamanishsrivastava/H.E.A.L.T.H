@@ -1,4 +1,5 @@
 import React from 'react';
+import "./SearchSuggestions.css"
 
 const SearchSuggestions = ({ medicineData, inputValue, filterOption, handleMedicineSelect }) => {
   return (
