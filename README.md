@@ -1,10 +1,10 @@
-# MediCare Project
+# H.E.A.L.T.H Project
 
-Welcome to the MediCare project repository! This repository hosts the source code, design assets, and documentation for the development of the MediCare website.
+Welcome to the H.E.A.L.T.H: Health Empowering And Life Transforming Hub! This repository hosts the source code, design assets, and documentation for the development of the H.E.A.L.T.H website.
 
 ## Table of Contents
 
-- [MediCare Project](#medicare-project)
+- [H.E.A.L.T.H Project](#health-project)
   - [Table of Contents](#table-of-contents)
   - [About](#about)
   - [Features](#features)
@@ -15,12 +15,12 @@ Welcome to the MediCare project repository! This repository hosts the source cod
 
 ## About
 
-MediCare is a web application that aims to provide users with information about various medicines, their uses, side effects, and related medical advice. The website also offers a platform for users to connect with healthcare professionals.
+H.E.A.L.T.H is a web application that aims to provide users with information about various health-related topics, lifestyle tips, and resources for overall well-being. The website also offers a platform for users to connect with healthcare professionals.
 
 ## Features
 
-- Search for medicines by symptoms.
-- Get detailed information about medicines, including dosage, side effects, and precautions.
+- Search for health topics and lifestyle tips.
+- Get detailed information about various health conditions, preventive measures, and wellness resources.
 - Connect with healthcare professionals for advice and consultations.
 - User-friendly and responsive design for a seamless experience on various devices.
 
@@ -31,8 +31,8 @@ MediCare is a web application that aims to provide users with information about 
 
 ## Usage
 
-1. Start the development server by running `npm start`.
-2. Access the website through your browser at `http://localhost:3000`.
+1. Start the development server by navigating to client directory `cd client` and running `npm run dev`.
+2. Access the website through your browser at `http://localhost:5173` or whichever port the website is hosted at locally.
 
 For more detailed usage instructions, refer to the [User Guide](user-guide.md).
 
@@ -42,4 +42,4 @@ We welcome contributions from the community! If you'd like to contribute to the 
 
 ## License
 
-This project is licensed under the [MediCare Custom Contribution License](LICENSE.md).
+This project is licensed under the [H.E.A.L.T.H Custom Contribution License](LICENSE.md).
