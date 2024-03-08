@@ -1,8 +1,8 @@
-# MediCare Custom Contribution License
+# H.E.A.L.T.H Custom Contribution License
 
 ## Preamble
 
-This Custom Contribution License ("License") governs your rights and responsibilities regarding contributions to MediCare ("the Project"). By making a contribution to the Project, you agree to the terms and conditions of this License. If you do not agree with these terms and conditions, you may not make contributions to the Project.
+This Custom Contribution License ("License") governs your rights and responsibilities regarding contributions to H.E.A.L.T.H ("the Project"). By making a contribution to the Project, you agree to the terms and conditions of this License. If you do not agree with these terms and conditions, you may not make contributions to the Project.
 
 ## Definitions
 
@@ -13,7 +13,7 @@ This Custom Contribution License ("License") governs your rights and responsibil
 
 ### Contribution Definition
 
-Contributions to the MediCare project can include, but are not limited to, code, design, documentation, and ideas. This encompasses any original work of authorship that is submitted to the project to enhance its functionality, usability, or overall quality.
+Contributions to the H.E.A.L.T.H project can include, but are not limited to, code, design, documentation, and ideas. This encompasses any original work of authorship that is submitted to the project to enhance its functionality, usability, or overall quality.
 
 ### Ownership Rights
 
@@ -50,4 +50,4 @@ This License constitutes the entire agreement between the parties concerning the
 
 ## Modification
 
-[Anish Srivastava](iamanishsrivastava) reserves the right to modify this License at any time by providing notice on the Project's repository. Any Contributions made after such modifications are posted constitute acceptance of those changes.
+[Anish Srivastava](https://github.com/iamanishsrivastava) reserves the right to modify this License at any time by providing notice on the Project's repository. Any Contributions made after such modifications are posted constitute acceptance of those changes.
