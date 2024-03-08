@@ -74,7 +74,7 @@ We're here to assist you. Contact us for any inquiries or feedback through the f
 Got questions? Check out our FAQ section for answers to common queries about using H.E.A.L.T.H.
 
 ## Support and Contact
-If you need further assistance or encounter any issues while using our website, please don't hesitate to contact our support team at [proj.health@gmail.com].
+If you need further assistance or encounter any issues while using our website, please don't hesitate to contact our support team at [team.medicareweb@gmail.com].
 
 ## Conclusion
 Thank you for choosing H.E.A.L.T.H as your trusted source for health information and resources. We're dedicated to providing you with the best possible experience and support on your wellness journey. If you have any suggestions or feedback, we'd love to hear from you. Here's to your health and well-being!
