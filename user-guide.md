@@ -67,7 +67,7 @@ Read testimonials from our satisfied users and see how H.E.A.L.T.H has helped th
 ### Contact Us
 We're here to assist you. Contact us for any inquiries or feedback through the following methods:
 
-- **Email:** proj.health@gmail.com
+- **Email:** team.medicareweb@gmail.com
 - **Discord:** Join our [Discord server](https://discord.gg/7TF9zaU97V)
 
 ## Frequently Asked Questions (FAQ)
