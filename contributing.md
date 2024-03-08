@@ -1,16 +1,16 @@
-# Contributing to MediCare
+# Contributing to H.E.A.L.T.H
 
-Welcome to the MediCare project! We appreciate your interest in contributing to our project. By participating in this project, you agree to abide by our Code of Conduct and follow the guidelines outlined below.
+Welcome to the H.E.A.L.T.H: Health Empowering And Transforming Hub project! We're thrilled that you're interested in contributing to our project. Before you get started, please take a moment to review our Code of Conduct and the guidelines outlined below.
 
 ## Code of Conduct
 
-Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to the project. We want everyone to feel welcome and safe in our community.
+Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing to the project. We expect all contributors to adhere to these guidelines to ensure a positive and inclusive community environment.
 
 ## How to Contribute
 
 ### Discussing Before Taking Action
 
-Before forking this repository, making changes, or using any project resources or code snippets, we highly recommend opening a discussion on our [Discord server](https://discord.gg/7TF9zaU97V) or contacting [Anish Srivastava](https://github.com/iamanishsrivastava) or the project's maintainers. This helps ensure that your proposed actions align with the project's goals and standards.
+Before making any significant changes or contributions, we encourage you to open a discussion on our [Discord server](https://discord.gg/7TF9zaU97V) or contact [Anish Srivastava](https://github.com/iamanishsrivastava) or the project maintainers. This helps ensure that your proposed actions align with the project's goals and standards.
 
 ### Reporting Bugs
 
@@ -41,8 +41,8 @@ Please ensure that your pull request includes a clear description of the changes
 
 ## Community
 
-Join our community on [Discord](https://discord.gg/7TF9zaU97V) for project updates, announcements and collaborations.
+Join our community on [Discord](https://discord.gg/7TF9zaU97V) for project updates, announcements, and collaborations.
 
 ## License
 
-By contributing to MediCare, you agree that your contributions will be licensed under the terms of our [MediCare Custom Contribution License](license).
+By contributing to H.E.A.L.T.H, you agree that your contributions will be licensed under the terms of our [H.E.A.L.T.H Custom Contribution License](LICENSE).
