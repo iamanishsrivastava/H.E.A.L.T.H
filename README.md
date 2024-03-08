@@ -1,6 +1,6 @@
 # H.E.A.L.T.H Project
 
-Welcome to the H.E.A.L.T.H: Health Empowering And Life Transforming Hub! This repository hosts the source code, design assets, and documentation for the development of the H.E.A.L.T.H website.
+Welcome to the H.E.A.L.T.H: Health Empowerment And Lifestyle Transformation Hub! This repository hosts the source code, design assets, and documentation for the development of the H.E.A.L.T.H website.
 
 ## Table of Contents
 
