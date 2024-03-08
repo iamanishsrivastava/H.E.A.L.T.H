@@ -1,6 +1,6 @@
 # Contributing to H.E.A.L.T.H
 
-Welcome to the H.E.A.L.T.H: Health Empowering And Transforming Hub project! We're thrilled that you're interested in contributing to our project. Before you get started, please take a moment to review our Code of Conduct and the guidelines outlined below.
+Welcome to the H.E.A.L.T.H: Health Empowerment And Transformation Hub project! We're thrilled that you're interested in contributing to our project. Before you get started, please take a moment to review our Code of Conduct and the guidelines outlined below.
 
 ## Code of Conduct
 
