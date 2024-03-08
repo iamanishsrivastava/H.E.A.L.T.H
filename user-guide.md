@@ -1,6 +1,6 @@
-# User Guide for MediCare
+# User Guide for H.E.A.L.T.H
 
-Welcome to the user guide for MediCare. This guide will help you get started and make the most out of your experience on our website.
+Welcome to the user guide for H.E.A.L.T.H. This guide will help you get started and make the most out of your experience on our website.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -8,8 +8,8 @@ Welcome to the user guide for MediCare. This guide will help you get started and
   - [Creating an Account](#creating-an-account)
   - [Logging In](#logging-in)
 - [Using the Home Page](#using-the-home-page)
-  - [Searching for Medicines](#searching-for-medicines)
-  - [Using the Toggle Switch](#using-the-toggle-switch)
+  - [Searching for Health Topics](#searching-for-health-topics)
+  - [Using the Theme Toggle](#using-the-theme-toggle)
 - [Exploring Other Sections](#exploring-other-sections)
   - [About Us](#about-us)
   - [Services](#services)
@@ -20,12 +20,12 @@ Welcome to the user guide for MediCare. This guide will help you get started and
 - [Conclusion](#conclusion)
 
 ## Introduction
-MediCare is your go-to platform for all things related to medicines and medical information. Whether you're looking for details on a specific medicine, information about symptoms, or simply need expert advice, we've got you covered. This guide will walk you through the various features and sections of our website to ensure you have a seamless experience.
+H.E.A.L.T.H is your go-to platform for all things related to health, wellness, and lifestyle transformation. Whether you're looking for information about health conditions, lifestyle tips, or expert advice, we've got you covered. This guide will walk you through the various features and sections of our website to ensure you have a seamless experience.
 
 ## Getting Started
 
 ### Creating an Account
-To make the most of MediCare's features, consider creating an account. Here's how:
+To make the most of H.E.A.L.T.H's features, consider creating an account. Here's how:
 
 1. Click on the "Sign Up" or "Create Account" button at the top right corner of the home page.
 2. Fill in your details, including your name, email address, and a secure password.
@@ -40,14 +40,14 @@ Already have an account? Logging in is easy:
 
 ## Using the Home Page
 
-### Searching for Medicines
-MediCare's home page is your gateway to a world of medical information. To search for medicines or symptoms:
+### Searching for Health Topics
+H.E.A.L.T.H's home page is your gateway to a world of health information. To search for health topics or lifestyle tips:
 
-1. In the search bar at the top of the page, type the name of the medicine or describe your symptoms.
+1. In the search bar at the top of the page, type the name of the topic or describe your query.
 2. Press "Enter" or click the "Search" button to see relevant results.
-3. Explore detailed information about medicines, including uses, side effects, and more.
+3. Explore detailed information about health topics, wellness resources, and more.
 
-### Using the Toggle Switch
+### Using the Theme Toggle
 Customize your browsing experience with our theme toggle switch. It allows you to switch between light and dark modes:
 
 - For a bright and energetic experience, click the sun icon.
@@ -56,25 +56,25 @@ Customize your browsing experience with our theme toggle switch. It allows you t
 ## Exploring Other Sections
 
 ### About Us
-Learn more about the team behind MediCare and our mission to provide you with accurate medical information.
+Learn more about the team behind H.E.A.L.T.H and our mission to provide you with accurate health information and resources.
 
 ### Services
-Discover the range of services we offer to help you stay informed and make informed decisions about your health.
+Discover the range of services we offer to help you stay informed and make positive changes to your lifestyle.
 
 ### Testimonials
-Read testimonials from our satisfied users and see how MediCare has helped them on their health journeys.
+Read testimonials from our satisfied users and see how H.E.A.L.T.H has helped them on their wellness journeys.
 
 ### Contact Us
 We're here to assist you. Contact us for any inquiries or feedback through the following methods:
 
-- **Email:** proj.medicare@gmail.com
+- **Email:** proj.health@gmail.com
 - **Discord:** Join our [Discord server](https://discord.gg/7TF9zaU97V)
 
 ## Frequently Asked Questions (FAQ)
-Got questions? Check out our FAQ section for answers to common queries about using MediCare.
+Got questions? Check out our FAQ section for answers to common queries about using H.E.A.L.T.H.
 
 ## Support and Contact
-If you need further assistance or encounter any issues while using our website, please don't hesitate to contact our support team at [proj.medicare@gmail.com].
+If you need further assistance or encounter any issues while using our website, please don't hesitate to contact our support team at [proj.health@gmail.com].
 
 ## Conclusion
-Thank you for choosing MediCare as your trusted source for medical information. We're dedicated to providing you with the best possible experience and information. If you have any suggestions or feedback, we'd love to hear from you. Here's to your health and well-being!
+Thank you for choosing H.E.A.L.T.H as your trusted source for health information and resources. We're dedicated to providing you with the best possible experience and support on your wellness journey. If you have any suggestions or feedback, we'd love to hear from you. Here's to your health and well-being!
