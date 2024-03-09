@@ -1,11 +1,15 @@
-#root {
-  height: 100vh;
-  box-sizing: border-box;
-  /* width: 100vh; */
+@font-face {
+  font-family: Glacial;
+  src: url(res/fontFamily/glacial-indifference/GlacialIndifference-Regular.otf);
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: black;
 }

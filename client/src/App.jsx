@@ -1,10 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
-import SideBarLeft from "./components/SideBars/SideBarLeft";
-import SideBarRight from "./components/SideBars/SideBarRight";
+// import Home from "./components/Home";
+import LandingPage from "./components/LandingPage/LandingPage";
+import HealthApp from "./components/HealthApp/HealthApp";
+
+// import SideBarLeft from "./components/SideBars/SideBarLeft";
+// import SideBarRight from "./components/SideBars/SideBarRight";
 
 function App() {
+ {  /*
   const [content, setContent] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [filterOption, setFilterOption] = useState(null);
@@ -64,20 +69,24 @@ function App() {
       />
     );
   }
-
+*/
+ }
   return (
-    <>
+    <Router>
       <div className="main">
-        <SideBarLeft onHomeIconClick={() => handleClick("home")}
+        {/* <SideBarLeft onHomeIconClick={() => handleClick("home")}
       onSettingsIconClick={() => handleClick("onSettingsClick")} />
         {renderedContent}
-        <SideBarRight onProfileIconClick={() => handleClick("profile")} />
-        
+        <SideBarRight onProfileIconClick={() => handleClick("profile")} /> */}
+        <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+          <Route path="/client/src/components/HealthApp/HealthApp.jsx" element={<HealthApp />} />
+        </Routes>
       </div>
-      <div className="footer-container">
+      {/* <div className="footer-container">
         <p id="footer">MEDICARE</p>
-      </div>
-    </>
+      </div> */}
+    </Router>
   );
 }
 

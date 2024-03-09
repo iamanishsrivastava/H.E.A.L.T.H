@@ -1,0 +1,30 @@
+/* Navigation Bar  */
+/* Default navbar style */
+.navbar {
+   top: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center !important;
+   margin: 0;
+   padding: 0;
+   gap: 18vw;
+   position: sticky !important;
+   z-index: 1;
+   /* transition: background-color 0.3s ease; */
+ }
+ 
+ @keyframes changeBackground {
+   0% {
+     background-color: #808080; /* Initial grey background color */
+   }
+   100% {
+     background-color: white; /* Fully scrolled background color */
+   }
+ }
+ /* Style for navbar when scrolling */
+ .navbar-scrolled {
+   animation: changeBackground 0.3s ease-in forwards;
+   background-color: white;
+   transition: animation 2s ease-in;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }

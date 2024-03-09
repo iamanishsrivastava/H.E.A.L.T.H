@@ -1,0 +1,118 @@
+.landing-page {
+  margin: 0;
+  height: 150vh;
+}
+
+#brand-name {
+  margin: 0;
+  font-size: 29px;
+  font-weight: 900;
+  color: #820263;
+  transition: color 0.3s ease-in;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  display: flex;
+  /* width: 25vw; */
+  margin: 0 !important;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-item {
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.signUpIn {
+  height: 60px;
+  width: 145px;
+  padding: 0 15px;
+  border-radius: 17px;
+  border: 2px solid #820263;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.signUpIn:hover {
+  color: white;
+  background-color: #820263;
+  border: 3px solid #820226;
+  font-weight: 700;
+}
+
+/* Content Container */
+.content-container {
+  align-items: center;
+  margin-top: 3vh;
+  padding: 5vh 16vw;
+  height: 40vh;
+  background: linear-gradient(135deg, #820263 0%, #4343c3 100%);
+  color: white;
+}
+/* Welcome Banner */
+.health-ff {
+  padding: 2vh 0 !important;
+  margin: 0;
+}
+
+.tagline {
+  font-family: "Glacial";
+  font-size: 4.3em;
+  font-weight: 700;
+}
+
+.gotoApp-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   top: 2vh;
+   left: 25vw;
+   width: 100%;
+}
+
+.gotoApp {
+   display: flex;
+   align-items: center;
+   padding: 10px 33px;
+   background-color: white;
+   color: #000;
+   border-radius: 35px;
+   font-weight: 700;
+   cursor: pointer;
+   transition: font-size 0.3s ease-out;
+}
+
+.gotoApp:hover {
+   color:#820226;
+   font-weight: 700;
+   font-size: 1.25em;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.bi {
+   font-size: 24px;
+   margin-left: 5px; /* Adjust the spacing between text and icon */
+}
+
+#why {
+  padding: 0 20vw;
+}
+
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "Glacial";
+}
+
+.title #brand-name {
+  font-size: 35px;
+}

@@ -1,16 +1,14 @@
 .main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #E5E5E5;
-  /* height: 90vh; */
-  padding-top: 1vh;
-
-  
+  margin-top: 2vh;
+  font-family: "Inter";
+  font-size: 1em;
+  font-style: normal;
+  font-stretch: extra-expanded;
+  font-weight: 300;
+  letter-spacing: 3px;
 }
 
-.footer-container {
-  /* flex-direction: column; */
+/* .footer-container { 
   align-items: center;
   justify-content: center;
   display: flex;
@@ -40,4 +38,4 @@
     display:none;
   }
     
-}
+} */
