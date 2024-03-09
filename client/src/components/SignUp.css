@@ -63,6 +63,7 @@
    width: 50%;
    height: 50px;
    border-radius: 5px;
+   cursor: pointer;
    transition: background-color 0.2s ease-in;
 }
 
