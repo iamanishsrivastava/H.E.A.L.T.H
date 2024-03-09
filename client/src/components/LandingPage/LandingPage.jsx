@@ -27,6 +27,7 @@ const LandingPage = () => {
         </p>
         <p className="why-content"></p>
       </section>
+      <center id="brand-name">This site is under development, for more information please contact the site owner Anish Srivastava at <a href="mailto:anishamsri@gmail.com?body=I%20am%20writing%20this%20email%20because..." target="_top">anishamsri@gmail.com</a>, you can also join the <a href="https://discord.gg/tFbKENWSTt" target="_blank">H.E.A.L.T.H Discord Server</a>.</center>
     </div>
   );
 };
