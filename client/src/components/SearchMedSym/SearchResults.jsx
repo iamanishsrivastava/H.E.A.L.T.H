@@ -12,10 +12,7 @@ const SearchResults = ({ selectedMedicine }) => {
   return (
     <div className="search-results-container">
       {/* Grid layout to display medicine details */}
-      <div className="left-section-container">
-        <p className='title'>Left section</p>
-        <p className='content'>content</p>
-      </div>
+      
       <div className="medicine-details">
         {/* Display name, symptoms, usage, advice */}
         <div className="medicine-detail name">

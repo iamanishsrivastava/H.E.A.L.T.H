@@ -1,0 +1,44 @@
+.profile-menu {
+  position: fixed;
+  top: 3%;
+  bottom: 0%;
+  right: 5%; /* Start off-screen */
+  width: 300px; /* Set a fixed width */
+  height: 110px; /* Set a fixed height */
+  max-width: 500px; /* Set a maximum width to avoid overly wide menus */
+  padding: 25px;
+  color: white;
+  border-radius: 2vh;
+  background-color: rgb(63, 63, 63);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: right 0.3s ease;
+}
+
+.profile-menu .visible {
+  right: 5% !important; /* Slide in from right when visible */
+}
+
+.title {
+  padding-bottom: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.menu-item {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  margin: 0%;
+  padding: 0 10px;
+  justify-content: space-between;
+  width: 255px;
+  cursor: pointer;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 16%);
+}
+.hover:hover {
+  background-color: rgba(166, 157, 157, 0.4);
+  border-radius: 0.5vh;
+  transition: all 0.15s ease-in-out;
+}
