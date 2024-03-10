@@ -41,11 +41,12 @@
   align-items: center;
   position: relative;
   top: 2vh;
-  left: 25vw;
-  max-width: 100%;
+  left: 45vw;
+  width: 19vw;
 }
 
 .gotoApp {
+  text-align: center;
   padding: 10px 3%;
   background-color: white;
   color: #000;
@@ -61,6 +62,7 @@
   color: #820226;
   font-weight: 700;
   font-size: 1.25em;
+  /* width: 20vw; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -72,7 +74,6 @@
 #why {
   padding: 0 20vw;
 }
-
 
 #why .title {
   font-size: 30px;
