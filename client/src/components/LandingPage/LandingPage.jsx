@@ -12,7 +12,11 @@ const LandingPage = () => {
           Health Empowerment and Lifestyle Transformation Hub
         </p>
         <div className="tagline">
-          where health <br /> is priority
+          <span>
+            where health
+            <br />
+            is priority
+          </span>
         </div>
         <div className="gotoApp-container">
           <Link to="/health-app" className="gotoApp">

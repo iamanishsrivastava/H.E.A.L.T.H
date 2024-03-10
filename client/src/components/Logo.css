@@ -1,10 +1,10 @@
- .brand-logo-container {
-   display: flex;
-   align-items: center;
- }
- 
- #logo {
-   height: 80px;
-   margin-right: 15px;
-   font-family: "Glacial";
- }
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  height: 40px;
+  /* margin-right: 160px; */
+  font-family: "Glacial";
+}
