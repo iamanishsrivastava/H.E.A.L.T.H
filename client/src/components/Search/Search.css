@@ -1,0 +1,89 @@
+.filter-menu-visible .separator-line {
+  opacity: 0%;
+}
+
+.filter-menu.visible ~ .suggest-item-list-container {
+  border-radius: 0% 0% 15px 15px; /* Reset border-radius when filter-menu is visible */
+}
+
+.search-info {
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.med-sym {
+  opacity: 0.5;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: inherit;
+  height: inherit;
+  
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 7%;
+}
+
+.nav .brand-logo-container {
+  position: absolute;
+  left: 15px;
+}
+
+/* .focused.search-container {
+   margin-top: 0;
+ }
+ 
+ .selected.search-container {
+  
+ } */
+
+.separator-line {
+  display: block; /* Initially hide separator line */
+  opacity: 0%;
+  width: 100%;
+  height: 1px;
+  background-color: #1f1e1e; /* Adjust color based on your design */
+  margin-top: 0px; /* Adjust margin-top to create separation */
+  position: relative; /* Add position:relative to ensure proper rendering */
+  /* Adjust margin-top to create separation */
+}
+
+.no-info {
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* other */
+.transition-info {
+  transition: opacity 0.5s ease-in-out;
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    border-radius: 0vh;
+    width: 100%;
+    height: 100vh;
+    box-shadow: none;
+  }
+
+  .search-container {
+    width: 50vw;
+  }
+
+  .filter-icon,
+  .filter-menu,
+  .no-info {
+    font-size: 0.75rem;
+  }
+}

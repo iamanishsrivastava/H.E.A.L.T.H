@@ -4,6 +4,7 @@ import "./App.css";
 // import Home from "./components/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
 import HealthApp from "./components/HealthApp/HealthApp";
+import SignUp from "./components/SignUp";
 
 // import SideBarLeft from "./components/SideBars/SideBarLeft";
 // import SideBarRight from "./components/SideBars/SideBarRight";
@@ -79,8 +80,9 @@ function App() {
         {renderedContent}
         <SideBarRight onProfileIconClick={() => handleClick("profile")} /> */}
         <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-          <Route path="/client/src/components/HealthApp/HealthApp.jsx" element={<HealthApp />} />
+          <Route exact path="/" element={<LandingPage />} />
+          <Route path="/health-app" element={<HealthApp />} />
+          <Route path="/login" element={<SignUp />} />
         </Routes>
       </div>
       {/* <div className="footer-container">

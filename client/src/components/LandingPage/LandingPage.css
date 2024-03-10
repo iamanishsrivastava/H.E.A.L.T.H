@@ -73,12 +73,13 @@
   padding: 0 20vw;
 }
 
-.title {
+
+#why .title {
   font-size: 30px;
   font-weight: 700;
   font-family: "Glacial";
 }
 
-.title #brand-name {
+#why .title #brand-name {
   font-size: 35px;
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import Logo from "../../../components/Logo";
 
@@ -31,9 +32,9 @@ const NavBar = () => {
           <li className="nav-item">Services</li>
           <li className="nav-item">Contact</li>
         </ul>
-        <button className="signUpIn" type="button">
+        <Link to="/login" className="signUpIn" type="button">
           Login
-        </button>
+        </Link>
       </div>
     </div>
   );

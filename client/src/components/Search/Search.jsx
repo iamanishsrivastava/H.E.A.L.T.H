@@ -1,38 +1,13 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./Home.css";
-import SearchBar from "./SearchBar";
-import SearchResults from "./SearchResults";
-import SearchSuggestions from "./SearchSuggestions.jsx";
-import FilterMenu from "./FilterMenu";
-import InfoDisplay from "./InfoDisplay.jsx";
-import SortMenu from "./SortMenu";
+import React, { useState, useEffect } from "react";
+import "./Search.css";
+import SearchBar from "../SearchMedSym/SearchBar";
+import SearchResults from "../SearchMedSym/SearchResults";
+import SearchSuggestions from "../SearchMedSym/SearchSuggestions.jsx";
+import FilterMenu from "../SearchMedSym/FilterMenu";
+import Logo from "../Logo.jsx";
 
-// Define the quickSort function
-const quickSort = (arr) => {
-  if (arr.length <= 1) {
-    return arr;
-  }
-
-  // Choose pivot element
-  const pivot = arr[Math.floor(arr.length / 2)];
-  const left = [];
-  const right = [];
-
-  // Partition the array
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].name < pivot.name) {
-      left.push(arr[i]);
-    } else if (arr[i].name > pivot.name) {
-      right.push(arr[i]);
-    }
-  }
-
-  // Recursively apply quicksort on left and right partitions
-  return [...quickSort(left), pivot, ...quickSort(right)];
-};
-
-const Home = () => {
-  // State variables
+const Search = () => {
+  // State Variables
   const [inputValue, setInputValue] = useState("");
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showFilterMenu, setShowFilterMenu] = useState(false);
@@ -40,14 +15,14 @@ const Home = () => {
 
   const [medicineData, setMedicineData] = useState([]); // State to store fetched medicine data
 
-  const [selectedMedicine, setSelectedMedicine] = useState(null); // state for selected medicine
+  const [selectedMedicine, setSelectedMedicine] = useState(null); // state for selected medicine // state for selected medicine
 
   useEffect(() => {
     // Effect hook for fetching medicine data
     const fetchMedicineData = async () => {
       try {
         const response = await fetch(
-          "https://healthempower.vercel.app/api/medicine"
+          "https://projecthealth.vercel.app/api/medicine"
         );
         if (!response.ok) {
           throw new Error("Failed to fetch medicine data");
@@ -86,6 +61,7 @@ const Home = () => {
 
   // Event handler for input change
   const handleChange = (event) => {
+    // Call the handleChange function passed as a prop
     setInputValue(event.target.value);
     setShowSearchBar(true);
   };
@@ -144,40 +120,36 @@ const Home = () => {
   const searchBarClass = selectedMedicine ? "selected" : "";
 
   return (
-    // Main container with conditional class based on filter menu visibility
-    <div className={`home ${searchBarClass}`}>
-      {/* Container for search functionality */}
-      <div className={`search-container gap-1`}>
-        {/* Information display section */}
-
-        {/* Render InfoDisplay */}
-        <InfoDisplay
-          showSearchBar={showSearchBar || !!selectedMedicine}
-          // showSearchResults={!!selectedMedicine}
-        />
-
-        
-
-       
-
-        <div className="separator-line"></div>
-
-        {/* Display search suggestions based on input value */}
-        {showSearchBar && inputValue && (
-          <SearchSuggestions
-            medicineData={medicineData}
-            inputValue={inputValue}
-            filterOption={filterOption}
-            handleMedicineSelect={handleMedicineSelect}
-          />
-        )}
+    <div className={`search-container ${searchBarClass}`}>
+      <div className="nav">
+         <Logo/>
+         <SearchBar 
+         inputValue={inputValue}
+         handleChange={handleChange}
+         handleFocus={handleFocus}
+         handleClear={handleClear}
+         setShowFilterMenu={setShowFilterMenu}
+         showSearchBar={showSearchBar}
+         />
       </div>
+      
+      {/* Display search suggestions based on input value */}
+      { showSearchBar && inputValue && (
+        <SearchSuggestions
+          medicineData={medicineData}
+          inputValue={inputValue}
+          filterOption={filterOption}
+          handleMedicineSelect={handleMedicineSelect}
+        />
+      )}
+
       {/* Pass selected medicine to SearchResults */}
       {selectedMedicine && (
         <SearchResults selectedMedicine={selectedMedicine} />
       )}
+
     </div>
   );
 };
 
-export default Home;
+export default Search;
