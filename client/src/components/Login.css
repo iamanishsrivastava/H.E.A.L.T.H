@@ -1,0 +1,128 @@
+.login-container {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 450px;
+  height: 450px;
+  border-radius: 25px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.login-container .title {
+  display: flex;
+  width: 80%;
+  font-size: 25px;
+  justify-content: space-between;
+}
+
+/* .login-container .brand-logo-container {
+  width: 100%;
+} */
+
+.login-container #logo {
+  height: 35px;
+}
+
+.login-container #brand-name {
+  font-size: 16px;
+}
+
+.login-container .email,
+.login-container .pass {
+  width: 80%;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.login-container .bi {
+  opacity: 70%;
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.login-container input {
+  border: none;
+  outline: none;
+  width: 80%;
+}
+
+.login-container .warn {
+  text-align: left;
+  width: 310px;
+  /* height: 100px; */
+  /* transform: translate(10%,160%); */
+  /* z-index: 1; */
+  font-weight: 700;
+  color: crimson;
+  font-size: 13px;
+}
+
+.rem-for-container {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.rem-for-container input {
+  width: inherit;
+}
+
+.rem-container {
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  width: 80%;
+  height: 5vh;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: #ac1a87;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #820263;
+}
+
+.register-link p {
+  margin: 0;
+}
+
+.login-container a {
+  color: #820263;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  font-weight: 500;
+}
+
+.form .line-hr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  color: #b6b6b6;
+}
+
+.form .line {
+  flex-grow: 1;
+  border-top: 2px solid #b6b6b6;
+  margin: 0 10px;
+}

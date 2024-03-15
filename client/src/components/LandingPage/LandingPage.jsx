@@ -9,21 +9,25 @@ const LandingPage = () => {
     <div className="landing-page">
       <NavBar />
       <div className="content-container">
-        <p className="health-ff">
-          Health Empowerment and Lifestyle Transformation Hub
-        </p>
-        <div className="tagline">
-          <span>
-            where health
-            <br />
-            is priority
-          </span>
-        </div>
-        <div className="gotoApp-container">
-          <Link to="/health-app" className="gotoApp">
-            Continue Without Login
-            <i className="bi bi-arrow-right"></i>
-          </Link>
+        <div className="content">
+          <div className="text">
+            <p className="health-ff">
+              Health Empowerment and Lifestyle Transformation Hub
+            </p>
+            <div className="tagline">
+              <span>
+                where health
+                <br />
+                is priority
+              </span>
+            </div>
+          </div>
+          <div className="gotoSearchApp-container">
+            <Link to="/health-app" className="gotoSearchApp">
+              Continue Without Login
+              <i className="bi bi-arrow-right"></i>
+            </Link>
+          </div>
         </div>
       </div>
       <section id="why">
