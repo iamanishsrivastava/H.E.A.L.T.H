@@ -1,0 +1,36 @@
+
+
+.account-type {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   /* margin-bottom: 1rem; */
+   background-color: rgb(236, 230, 230);
+   border-radius: 10px;
+   padding: 2px;
+   width: 80%;
+ }
+ 
+ .account-type label {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 50%;
+   height: 50px;
+   border-radius: 10px;
+   transition: background-color 0.2s ease-in;
+   cursor: pointer;
+ }
+ 
+ .account-type .selected {
+   background-color: white;
+   margin: 1px;
+ }
+ 
+ .account-type input {
+   display: none;
+   border: none;
+   outline: none;
+   width: 80%;
+ }

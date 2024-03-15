@@ -1,0 +1,31 @@
+.form .email {
+  position: relative;
+  width: 80%;
+  padding: 0.5rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.email .placeholder {
+  opacity: 1;
+  position: absolute;
+  top: 0.5rem;
+  left: 3rem;
+  padding: 0 0.25rem;
+  background-color: #fff;
+  pointer-events: none;
+  color: #9da7a6;
+  transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease;
+}
+
+.form .email input:focus + .placeholder {
+  top: -0.5rem;
+  font-size: 0.75rem;
+  left: 0.7rem;
+}
+
+.email .placeholder.focused {
+  top: -0.5rem;
+  font-size: 0.75rem !important;
+  left: 0.7rem;
+}

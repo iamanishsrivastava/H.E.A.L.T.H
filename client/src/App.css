@@ -6,6 +6,7 @@
   font-stretch: extra-expanded;
   font-weight: 400;
   letter-spacing: 3px;
+  -webkit-user-select: none;
 }
 
 /* .footer-container { 

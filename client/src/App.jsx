@@ -4,7 +4,8 @@ import "./App.css";
 // import Home from "./components/Home";
 import LandingPage from "./components/LandingPage/LandingPage";
 import HealthApp from "./components/HealthApp/HealthApp";
-import SignUp from "./components/SignUp";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 // import SideBarLeft from "./components/SideBars/SideBarLeft";
 // import SideBarRight from "./components/SideBars/SideBarRight";
@@ -82,7 +83,8 @@ function App() {
         <Routes>
           <Route exact path="/" element={<LandingPage />} />
           <Route path="/health-app" element={<HealthApp />} />
-          <Route path="/login" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
       {/* <div className="footer-container">
