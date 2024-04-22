@@ -1,0 +1,148 @@
+#for-you {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;  
+  padding: 10vh 10vw;
+  height: 65vh;
+  width: 100%;
+  word-wrap:break-word;
+  flex-wrap: wrap;
+  background-color: #f7f7f7;
+}
+
+#for-you .title {
+  height: 23%;
+  width: 100%;
+  margin: 0;
+  /* padding-bottom: 45px; */
+  align-items: center;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+#for-you .title #brand-name {
+  font-size: 1em;
+  font-weight: 900;
+}
+
+#for-you .for-you-content {
+  display: flex;
+  flex-direction: row;
+  height: 80%;
+  width: 100%;
+  /* margin-top: 10px; */
+  align-items: center;
+  transition: flex-direction ease-in 0.3s;
+}
+
+#for-you .left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  background-color: #bde3ff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  overflow: hidden;
+}
+
+#for-you .left .left-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 10%;
+  background-color: #a8d0ed;
+}
+
+#for-you .left .individual {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}
+
+#for-you .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  height: 100%;
+}
+
+#for-you .points {
+   display: flex;
+   flex-direction: column;
+
+   align-items: center;
+}
+
+#for-you .circle {
+  height: 120px;
+  width: 120px;
+  background-color: white;
+  border-radius: 100%;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+#for-you .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(253, 219, 225);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  overflow: hidden;
+}
+
+#for-you .right .right-title {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 80px;
+  background-color: pink;
+}
+
+#for-you .right .healthcare-services {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+}
+
+@media screen and (max-width: 1230px) {
+
+   #for-you .for-you-content {
+      height: 100%;
+      flex-direction: column;
+   }
+
+   #for-you .left {
+      height: 100%;
+      border-top-right-radius: 25px;
+      border-bottom-left-radius: 0;
+   }
+   
+   #for-you .right {
+      height: 100%;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 25px;
+   }
+
+   #for-you .individual, #for-you .healthcare-services {
+      font-size: 14px !important;
+   }
+
+}

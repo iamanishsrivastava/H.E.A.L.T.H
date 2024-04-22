@@ -3,6 +3,14 @@
   align-items: center;
 }
 
+#brand-name {
+  margin: 0;
+  font-size: 31px;
+  font-weight: 900;
+  color: #000;
+  transition: color 0.3s ease-in;
+}
+
 #logo {
   height: 40px;
   /* margin-right: 160px; */

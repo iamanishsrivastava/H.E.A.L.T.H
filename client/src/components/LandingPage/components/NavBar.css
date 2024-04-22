@@ -18,27 +18,12 @@
   z-index: 1;
 }
 
-@keyframes changeBackground {
-  0% {
-    background-color: #ecd1d1;
-  }
-  25% {
-    background-color: #cac5c5;
-  }
-  50% {
-    background-color: #d6c7c7;
-  }
-  100% {
-    background-color: whitesmoke; /* Fully scrolled background color */
-  }
+.nav-icon {
+  display: none;
 }
 
-/* Style for navbar when scrolling */
-.navbar-scrolled {
-  animation: changeBackground 0.2s ease-in;
-  background-color: white;
-  transition: animation 2s ease-in;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.close-icon-container {
+  display: none;
 }
 
 .item-container {
@@ -68,7 +53,6 @@ ul {
 
 .login {
   align-items: center;
-  background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
@@ -98,7 +82,7 @@ ul {
 .login:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(76, 79, 224, 0.65);
+  color: rgba(18, 21, 211, 0.65);
 }
 
 .login:hover {
@@ -111,4 +95,60 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
+}
+
+
+@media screen  and (max-width: 790px) {
+
+  .navbar {
+    width: 100% !important;
+  }
+  .nav-icon {
+    display: block;
+  }
+
+  .item-container {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    transform: translateX(100vw);
+    transition: opacity 0.4s, visibility 0.4s;
+  }
+
+  .item-container.active {
+    opacity: 1;
+    visibility: visible;
+    position: absolute;
+    z-index: 1 !important;
+    top: 0 !important;
+    right: 0;
+    transform: translateX(0);
+    flex-direction: column;
+    background-color: aliceblue;
+    width: 100vw;
+    height: 100vh;
+    align-items: right;
+  }
+  
+  .close-icon-container {
+    display: block;
+    width: 100vw;
+    text-align: right;
+    padding-top: 25px;
+  }
+
+  .close-icon {
+    padding-right: 17vw;
+  }
+
+  ul.active {
+    display: flex;
+    font-size: 30px !important;
+    flex-direction: column;
+  }
+
+  .login {
+    font-size: 30px;
+  }
+  
 }

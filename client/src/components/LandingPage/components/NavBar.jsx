@@ -5,6 +5,7 @@ import Logo from "../../../components/Logo";
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +25,20 @@ const NavBar = () => {
     };
   }, []);
 
+  const toggleActive = () => {
+    setIsActive((prevActive) => !prevActive);
+  };
+
   return (
     <div className="navbar-container">
       <div className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         <Logo />
-        <div className="item-container">
-          <ul>
+        <i className="bi bi-arrow-bar-left nav-icon" onClick={toggleActive}></i>
+        <div className={`item-container ${isActive ? "active" : ""}`}>
+          <div className="close-icon-container">
+            <i className="bi bi-x-lg close-icon" onClick={toggleActive}></i>
+          </div>
+          <ul className={`${isActive ? "active" : ""}`}>
             <li className="nav-item">About</li>
             <li className="nav-item">Services</li>
             <li className="nav-item">Careers</li>

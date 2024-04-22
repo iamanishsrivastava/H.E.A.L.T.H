@@ -4,56 +4,54 @@
   height: 150vh;
 }
 
-#brand-name {
-  margin: 0;
-  font-size: 29px;
-  font-weight: 900;
-  color: #820263;
-  transition: color 0.3s ease-in;
+.nav-content-container {
+  background: radial-gradient(
+    #bce2ff 0%,
+    #bce2ff 30%,
+    #a8d0ed 50%,
+    #a8d0ed 70%,
+    #a8d0ed 100%
+  );
 }
 
 /* Content Container */
-.content-container {
+/* .content-container {
+  padding-top: 20px; 
+} */
+
+.nav-content-container .content {
   display: flex;
-  /* flex-direction: column; */
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #820263 0%, #4343c3 100%);
   height: 60vh;
 }
 
-.content-container .content {
-  display: flex;
-  height: 100%;
-  width: 65;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 0;
-  color: white;
-  flex-wrap: wrap;
-}
-
-.landing-page .content-container .content .text {
+.nav-content-container .content .text {
   width: 100%;
 }
 
 /* Welcome Banner */
 .health-ff {
-  padding: 2vh 0 !important;
-  /* margin-top: 5vh; */
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .tagline {
-  font-family: "Glacial";
-  font-size: 4.3em;
-  font-weight: 700;
-  line-height: 120%;
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 150%;
+  text-transform: capitalize;
 }
 
 .gotoSearchApp-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  justify-content: end;
+  height: 45px;
 }
 
 .gotoSearchApp {
@@ -69,12 +67,13 @@
   cursor: pointer;
   transition: font-size 0.3s ease-out;
   /* max-width: 100%; Ensure the button doesn't exceed the container's width */
-  width: 350px;
+  width: 400px;
+  height: 35px;
   box-sizing: border-box; /* Include padding in the total width */
 }
 
 .gotoSearchApp:hover {
-  color: #820226;
+  color: rgba(18, 21, 211, 0.65);
   font-weight: 700;
   font-size: 1.25em;
   /* width: 20vw; */
@@ -86,16 +85,44 @@
   margin-left: 5px; /* Adjust the spacing between text and icon */
 }
 
-#why {
-  padding: 0 20vw;
+@media screen and (max-width: 790px) {
+  .content {
+    height: 80vh !important;
+  }
 }
 
-#why .title {
-  font-size: 30px;
-  font-weight: 700;
-  font-family: "Glacial";
+/* Common */
+
+.title {
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
 }
 
-#why .title #brand-name {
-  font-size: 35px;
+.title #brand-name {
+  margin: 0 5px;
+  font-size: 1em;
+  font-weight: 900;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 15px !important;
+  height: 100%;
+  width: 100%;
+}
+
+li {
+  font-size: 1.5em;
+  text-align: left;
+  margin-bottom: 5px;
 }

@@ -1,0 +1,31 @@
+#why {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  height: 536px;
+  background-color: #a8d0ed;
+}
+
+#why .content-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: white;
+  padding: 15px;
+  margin: 0;
+  width: 75vw;
+  height: 30vh;
+  font-size: 18px;
+  overflow: auto;
+}
+
+#why .content {
+  margin: 0;
+  text-align: justify;
+  width: 90%;
+  height: 100%;
+  font-size: 16px;
+}
