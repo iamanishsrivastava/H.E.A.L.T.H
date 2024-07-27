@@ -27,7 +27,8 @@ const processAndWriteChunks = (chunks) => {
   chunks.forEach((chunk, index) => {
     const isLastChunk = index === chunks.length - 1;
     const jsonString = chunk.join('\n'); // Join lines to form a complete JSON string
-    const cleanedJsonString = jsonString.replace(/\n\]\[/g, ','); // Replace '][' with ,
+    const cleanedJsonString = jsonString.replace(/"preventer"/g, "'preventer'"); // Replace '"good"' with 'good',
+    // cleanedJsonString = cleanedJsonString.replace(/"preventer"/g, "'preventer'"); // Replace '"good"' with 'good',
     writeStream.write(cleanedJsonString, () => {
       // If it's the last chunk, close the write stream
       if (isLastChunk) {

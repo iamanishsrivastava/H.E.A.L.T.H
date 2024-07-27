@@ -24,6 +24,7 @@
 
 #why .content {
   margin: 0;
+  align-items: center;
   text-align: justify;
   width: 90%;
   height: 100%;
